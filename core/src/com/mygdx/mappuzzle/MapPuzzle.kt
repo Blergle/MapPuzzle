@@ -16,9 +16,8 @@ class MapPuzzle : Game() {
         //println("yes")
         assetManager = AssetManager();
         batch = SpriteBatch()
-       // img = Texture("badlogic.jpg")
 
-        this.setScreen(MainScreen(this))
+        this.setScreen(LoadingScreen(this))
     }
 
     override fun render() {
