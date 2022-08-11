@@ -10,6 +10,9 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
     override fun show() {
         Gdx.input.inputProcessor = this
+        Piece.setTexture(game.assetManager!!.get("piece.jpg"))
+        level.start()
+
     }
     var r = 0f
     var g = 0f
@@ -17,13 +20,16 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
     var x = 0f
     var y = 0f
 
-    var piece = Piece(x,y,game.assetManager!!.get("piece.jpg"))
+    var level : Level = Level()
+
+
+    var piece = Piece(x,y)
 
 
     override fun render(delta: Float) {
         ScreenUtils.clear(r, g, b, 1f)
         game.batch!!.begin()
-        piece.draw(game.batch!!)
+        level.draw(game.batch!!)
         game.batch!!.end()
     }
 
@@ -65,6 +71,13 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
     }
 
     override fun touchDragged(screenX: Int, screenY: Int, pointer: Int): Boolean {
+        var mouseY = Gdx.graphics.height-screenY.toFloat()
+        var currentPiece = level.get(screenX.toFloat(), mouseY.toFloat())
+        if(currentPiece != null){
+            currentPiece.x = screenX.toFloat() - currentPiece.width/2
+            currentPiece.y = mouseY.toFloat() - currentPiece.height/2
+        }
+
         return true
     }
 }
