@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.actions.Actions.show
 import com.badlogic.gdx.utils.ScreenUtils
 
-class MapPuzzle : Game() {
+public class MapPuzzle : Game() {
     var batch: SpriteBatch? = null
     var img: Texture? = null
     var assetManager: AssetManager? = null;
@@ -17,7 +17,8 @@ class MapPuzzle : Game() {
         assetManager = AssetManager();
         batch = SpriteBatch()
 
-        this.setScreen(LoadingScreen(this))
+        this.setScreen(MainMenu(this));
+        //this.setScreen(LoadingScreen(this))
     }
 
     override fun render() {
