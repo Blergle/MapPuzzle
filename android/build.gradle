@@ -87,4 +87,5 @@ task run(type: Exec) {
     commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.mygdx.mappuzzle/com.mygdx.mappuzzle.AndroidLauncher'
 }
 
+
 //eclipse.project.name = appName + "-android"

@@ -1,18 +1,17 @@
 package com.mygdx.mappuzzle
 
+import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 
+/**
+ * this object will represent a Level so put anything level specific in here
+ * currently just contains an array of pieces for drawing.
+ */
 class Level {
 
     val pieces: MutableList<Piece> = ArrayList()
 
-    fun start(){
-        pieces.add(Piece(10f,10f))
-        pieces.add(Piece(20f,20f))
-        pieces.add(Piece(30f,30f))
-    }
-
-    fun draw(batch : SpriteBatch) {
+    fun draw(batch : PolygonSpriteBatch) {
         for(Piece in pieces){
             Piece.draw(batch)
         }
@@ -26,6 +25,16 @@ class Level {
             }
         }
         return null
+    }
+
+    fun addPiece(p : Piece){
+        pieces.add(p)
+    }
+
+    fun dispose(){
+        for(Piece in pieces){
+            Piece.dispose()
+        }
     }
 
 }
