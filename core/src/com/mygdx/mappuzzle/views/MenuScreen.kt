@@ -30,11 +30,11 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         val preferences = TextButton("Preferences", skin)
         val exit = TextButton("Exit", skin)
 
-        table.add(newGame).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/5).toFloat())
+        table.add(newGame).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        table.add(preferences).fillX().uniformX()
+        table.add(preferences).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
-        table.add(exit).fillX().uniformX()
+        table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
         exit.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
