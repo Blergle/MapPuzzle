@@ -12,12 +12,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.badlogic.gdx.utils.viewport.StretchViewport
+import com.mygdx.mappuzzle.MainScreen
 import com.mygdx.mappuzzle.MapPuzzle
 
 // This class contains all the UI components and functionality of the main menu.
-class MenuScreen(myGame: MapPuzzle) : Screen {
+class MenuScreen(var game: MapPuzzle) : Screen {
 
-    private var parent: MapPuzzle
     var stage: Stage
 
     override fun show() {
@@ -53,7 +53,8 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         // method and change the screen to the main screen.
         play.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
-                parent.changeScreen(MapPuzzle.APPLICATION)
+                dispose()
+                game.screen = MainScreen(game)
             }
         })
 
@@ -61,7 +62,7 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         // change screen method and change to the preferences screen.
         settings.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
-                parent.changeScreen(MapPuzzle.SETTINGS)
+                game.screen = SettingsScreen(game)
             }
         })
     }
@@ -89,7 +90,6 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
     }
 
     init {
-        parent = myGame
         stage = Stage(ScreenViewport())
         Gdx.input.inputProcessor = stage
     }

@@ -16,8 +16,14 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/robovm/ios/robovm.xml'
+        exclude 'META-INF/DEPENDENCIES.md'
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
     }
     defaultConfig {
+        multiDexEnabled = true
         applicationId "com.mygdx.mappuzzle"
         minSdkVersion 14
         targetSdkVersion 31

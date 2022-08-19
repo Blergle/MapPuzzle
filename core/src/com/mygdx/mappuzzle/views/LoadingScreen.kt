@@ -2,6 +2,7 @@ package com.mygdx.mappuzzle
 
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.Texture
+import com.mygdx.mappuzzle.views.MenuScreen
 
 /**
  * screen class used to load assets and levels before the main screen is shown
@@ -15,7 +16,7 @@ class LoadingScreen(var game : MapPuzzle) : Screen {
     override fun render(delta: Float) {
         //switches screen onces all the assets are loaded
         if(game.assetManager!!.update(17)){
-            game.screen = MainScreen(game)
+            game.screen = MenuScreen(game)
         }
     }
 
