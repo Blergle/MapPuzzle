@@ -83,6 +83,7 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
     override fun resume() {}
     override fun hide() {}
 
+    // This method calls dispose on the stage, so the stage is disposed.
     override fun dispose() {
         stage.dispose()
     }
