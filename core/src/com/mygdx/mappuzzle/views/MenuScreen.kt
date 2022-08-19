@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.badlogic.gdx.utils.viewport.StretchViewport
 import com.mygdx.mappuzzle.MapPuzzle
 
-// This class the main menu.
+// This class contains all the UI components and functionality of the main menu.
 class MenuScreen(myGame: MapPuzzle) : Screen {
 
     private var parent: MapPuzzle
