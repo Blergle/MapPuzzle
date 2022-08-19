@@ -4,7 +4,7 @@ import com.badlogic.gdx.Screen
 import com.mygdx.mappuzzle.MapPuzzle
 
 class LevelSelectScreen(var game : MapPuzzle) : Screen {
-    
+
     public var parent: MapPuzzle = game
 
     override fun show() {

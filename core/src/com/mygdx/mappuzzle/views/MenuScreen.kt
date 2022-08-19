@@ -26,11 +26,11 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         stage.addActor(table)
 
         val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
-        val newGame = TextButton("New Game", skin)
+        val play = TextButton("Play", skin)
         val preferences = TextButton("Preferences", skin)
         val exit = TextButton("Exit", skin)
 
-        table.add(newGame).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
         table.add(preferences).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
@@ -41,7 +41,7 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
                 Gdx.app.exit()
             }
         })
-        newGame.addListener(object : ChangeListener() {
+        play.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
                 parent.changeScreen(MapPuzzle.APPLICATION)
             }
