@@ -25,27 +25,38 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         table.debug = true
         stage.addActor(table)
 
+        // Import the UI assets from files.
         val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
+
+        // Create buttons for the menu.
         val play = TextButton("Play", skin)
         val preferences = TextButton("Preferences", skin)
         val exit = TextButton("Exit", skin)
 
+        // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
         table.add(preferences).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
         table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
+        // Listen to when the exit button is pressed, when pressed exit the app.
         exit.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
                 Gdx.app.exit()
             }
         })
+
+        // Listen for when the play button is pressed, when pressed call the change screen
+        // method and change the screen to the main screen.
         play.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
                 parent.changeScreen(MapPuzzle.APPLICATION)
             }
         })
+
+        // Listen for when the preferences button is pressed, when it is pressed call the
+        // change screen method and change to the preferences screen.
         preferences.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
                 parent.changeScreen(MapPuzzle.PREFERENCES)
