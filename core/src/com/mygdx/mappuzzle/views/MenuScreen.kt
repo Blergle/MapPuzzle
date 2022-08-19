@@ -14,7 +14,9 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.badlogic.gdx.utils.viewport.StretchViewport
 import com.mygdx.mappuzzle.MapPuzzle
 
+// This class the main menu.
 class MenuScreen(myGame: MapPuzzle) : Screen {
+
     private var parent: MapPuzzle
     var stage: Stage
 
@@ -64,6 +66,7 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         })
     }
 
+    // The render method clears the screen before drawing the stage.
     override fun render(delta: Float) {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
@@ -71,6 +74,7 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
         stage.draw()
     }
 
+    // resize method will update the viewport size if the screen size is changed.
     override fun resize(width: Int, height: Int) {
         stage.viewport.update(width, height, true)
     }
