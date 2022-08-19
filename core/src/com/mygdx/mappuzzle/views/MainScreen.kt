@@ -1,19 +1,25 @@
-package com.mygdx.mappuzzle
+package com.mygdx.mappuzzle.views
 
 import com.badlogic.gdx.*
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.utils.ScreenUtils
+import com.mygdx.mappuzzle.Level
+import com.mygdx.mappuzzle.MapPuzzle
+import com.mygdx.mappuzzle.Piece
 import java.util.*
 
 
-class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
+class MainScreen(var game: MapPuzzle) : Screen, InputAdapter() {
+
+    //public var parent: MapPuzzle = game
 
     override fun show() {
         Gdx.input.inputProcessor = this
-        Piece.setTexture(game.assetManager!!.get("piece.jpg"))
-        level.start()
+        //Piece.setTexture(game.assetManager!!.get("piece.jpg"))
+        //level.start()
 
     }
+
     var r = 0f
     var g = 0f
     var b = 1f
@@ -22,9 +28,7 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
     var level : Level = Level()
 
-
     var piece = Piece(x,y)
-
 
     override fun render(delta: Float) {
         ScreenUtils.clear(r, g, b, 1f)
@@ -52,14 +56,10 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
     }
 
-
-
     override fun touchDown(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
         r = MathUtils.random()
         g = MathUtils.random()
         b = MathUtils.random()
-
-
 
         piece.x = screenX.toFloat()
         piece.y = Gdx.graphics.height-screenY.toFloat()

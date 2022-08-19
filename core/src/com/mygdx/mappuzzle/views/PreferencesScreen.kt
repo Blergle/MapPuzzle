@@ -1,16 +1,11 @@
-package com.mygdx.mappuzzle
+package com.mygdx.mappuzzle.views
 
-import com.badlogic.gdx.Gdx
-import com.mygdx.mappuzzle.MapPuzzle
 import com.badlogic.gdx.Screen
+import com.mygdx.mappuzzle.MapPuzzle
 
-public class MainMenu(var game : MapPuzzle) : Screen {
+class PreferencesScreen (var game : MapPuzzle) : Screen {
 
-    final MapPuzzle game;
-
-    public MainMenu(final MapPuzzle game) {
-        this.game = game;
-    }
+    public var parent: MapPuzzle = game
 
     override fun show() {
         TODO("Not yet implemented")
