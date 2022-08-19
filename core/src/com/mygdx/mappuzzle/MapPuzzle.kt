@@ -1,24 +1,56 @@
 package com.mygdx.mappuzzle
 
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Game
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.scenes.scene2d.actions.Actions.show
-import com.badlogic.gdx.utils.ScreenUtils
+import com.mygdx.mappuzzle.views.*
 
-public class MapPuzzle : Game() {
+public open class MapPuzzle : Game() {
+
+    var font: BitmapFont? = null
     var batch: SpriteBatch? = null
     var img: Texture? = null
     var assetManager: AssetManager? = null;
+
+    private var loadingScreen: LoadingScreen? = null
+    private var preferencesScreen: PreferencesScreen? = null
+    private var menuScreen: MenuScreen? = null
+    private var mainScreen: MainScreen? = null
+    private var endScreen: EndScreen? = null
+
+    fun changeScreen(screen: Int) {
+        when (screen) {
+            MENU -> {
+                if (menuScreen == null) menuScreen = MenuScreen(this)
+                setScreen(menuScreen)
+            }
+            PREFERENCES -> {
+                if (preferencesScreen == null) preferencesScreen = PreferencesScreen(this)
+                setScreen(preferencesScreen)
+            }
+            APPLICATION -> {
+                if (mainScreen == null) mainScreen = MainScreen(this)
+                setScreen(mainScreen)
+            }
+            ENDGAME -> {
+                if (endScreen == null) endScreen = EndScreen(this)
+                setScreen(endScreen)
+            }
+        }
+    }
     override fun create() {
         //println("yes")
         assetManager = AssetManager();
         batch = SpriteBatch()
+        font = BitmapFont();
 
-        this.setScreen(MainMenu(this));
         //this.setScreen(LoadingScreen(this))
+        //this.setScreen(orch(this));
+
+        loadingScreen = LoadingScreen(this)
+        setScreen(loadingScreen)
     }
 
     override fun render() {
@@ -30,11 +62,17 @@ public class MapPuzzle : Game() {
         //batch!!.end()
 
         super.render()
-
     }
 
     override fun dispose() {
         batch!!.dispose()
         img!!.dispose()
+        super.dispose()
+    }
+    companion object {
+        const val MENU = 0
+        const val PREFERENCES = 1
+        const val APPLICATION = 2
+        const val ENDGAME = 3
     }
 }
