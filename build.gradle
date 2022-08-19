@@ -1,5 +1,5 @@
 buildscript {
-    
+
 
     repositories {
         mavenLocal()
@@ -8,19 +8,21 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
     }
+
     ext.kotlinVersion = '1.6.10'
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.7.10")
 
-
-        
 
     }
+
 }
 
-allprojects {
 
+allprojects {
+    apply plugin: 'org.jetbrains.dokka'
     version = '1.0'
     ext {
         appName = "MapPuzzle"
@@ -31,6 +33,8 @@ allprojects {
         aiVersion = '1.8.2'
         gdxControllersVersion = '2.2.1'
     }
+
+
 
     repositories {
         mavenLocal()
@@ -47,6 +51,8 @@ project(":android") {
     apply plugin: "com.android.application"
     apply plugin: 'kotlin-android'
 
+
+
     configurations { natives }
 
     dependencies {
@@ -59,7 +65,9 @@ project(":android") {
 
         api 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:5.9.0-alpha.1'
 
-        
+
+
+
     }
 }
 

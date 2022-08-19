@@ -87,5 +87,9 @@ task run(type: Exec) {
     commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.mygdx.mappuzzle/com.mygdx.mappuzzle.AndroidLauncher'
 }
 
+dependencies {
+    implementation 'org.jetbrains.dokka:dokka-gradle-plugin:1.7.10'
+}
+
 
 //eclipse.project.name = appName + "-android"

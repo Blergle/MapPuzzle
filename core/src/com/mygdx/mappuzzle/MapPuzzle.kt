@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.actions.Actions.show
 import com.badlogic.gdx.utils.Json
 import com.badlogic.gdx.utils.ScreenUtils
-import com.mapbox.geojson.FeatureCollection
+//import com.mapbox.geojson.FeatureCollection
 
 /**
  * main Game class, controls which screen is currently being shown
