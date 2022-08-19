@@ -15,7 +15,7 @@ public open class MapPuzzle : Game() {
     var assetManager: AssetManager? = null;
 
     private var loadingScreen: LoadingScreen? = null
-    private var preferencesScreen: PreferencesScreen? = null
+    private var settingsScreen: SettingsScreen? = null
     private var menuScreen: MenuScreen? = null
     private var mainScreen: MainScreen? = null
     private var endScreen: EndScreen? = null
@@ -26,9 +26,9 @@ public open class MapPuzzle : Game() {
                 if (menuScreen == null) menuScreen = MenuScreen(this)
                 setScreen(menuScreen)
             }
-            PREFERENCES -> {
-                if (preferencesScreen == null) preferencesScreen = PreferencesScreen(this)
-                setScreen(preferencesScreen)
+            SETTINGS -> {
+                if (settingsScreen == null) settingsScreen = SettingsScreen(this)
+                setScreen(settingsScreen)
             }
             APPLICATION -> {
                 if (mainScreen == null) mainScreen = MainScreen(this)
@@ -71,7 +71,7 @@ public open class MapPuzzle : Game() {
     }
     companion object {
         const val MENU = 0
-        const val PREFERENCES = 1
+        const val SETTINGS = 1
         const val APPLICATION = 2
         const val ENDGAME = 3
     }

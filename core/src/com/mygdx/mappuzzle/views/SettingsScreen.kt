@@ -3,7 +3,7 @@ package com.mygdx.mappuzzle.views
 import com.badlogic.gdx.Screen
 import com.mygdx.mappuzzle.MapPuzzle
 
-class LevelSelectScreen(var game : MapPuzzle) : Screen {
+class SettingsScreen (var game : MapPuzzle) : Screen {
 
     public var parent: MapPuzzle = game
 
@@ -34,5 +34,4 @@ class LevelSelectScreen(var game : MapPuzzle) : Screen {
     override fun dispose() {
         TODO("Not yet implemented")
     }
-
 }

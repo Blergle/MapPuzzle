@@ -32,13 +32,13 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
 
         // Create buttons for the menu.
         val play = TextButton("Play", skin)
-        val preferences = TextButton("Preferences", skin)
+        val settings = TextButton("Settings", skin)
         val exit = TextButton("Exit", skin)
 
         // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        table.add(preferences).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
         table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
@@ -59,9 +59,9 @@ class MenuScreen(myGame: MapPuzzle) : Screen {
 
         // Listen for when the preferences button is pressed, when it is pressed call the
         // change screen method and change to the preferences screen.
-        preferences.addListener(object : ChangeListener() {
+        settings.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
-                parent.changeScreen(MapPuzzle.PREFERENCES)
+                parent.changeScreen(MapPuzzle.SETTINGS)
             }
         })
     }
