@@ -1,16 +1,8 @@
 package com.mygdx.mappuzzle
 
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Game
 import com.badlogic.gdx.assets.AssetManager
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
-import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer
-import com.badlogic.gdx.scenes.scene2d.actions.Actions.show
-import com.badlogic.gdx.utils.Json
-import com.badlogic.gdx.utils.ScreenUtils
-//import com.mapbox.geojson.FeatureCollection
 
 /**
  * main Game class, controls which screen is currently being shown
