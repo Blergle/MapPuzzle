@@ -1,14 +1,8 @@
 package com.mygdx.mappuzzle
 
 import com.badlogic.gdx.*
-import com.badlogic.gdx.files.FileHandle
 import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.math.MathUtils
-import com.badlogic.gdx.utils.Json
 import com.badlogic.gdx.utils.ScreenUtils
-import com.mapbox.geojson.FeatureCollection
-import java.util.*
-import javax.xml.catalog.CatalogFeatures
 
 /**
  * Main Screen of the game, this is where the level will be shown and the game is actually played
@@ -28,12 +22,7 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
         //creates and sets the level to hungary
         level = l.createHungary()
-
     }
-
-
-
-
 
     override fun render(delta: Float) {
         ScreenUtils.clear(color)
@@ -57,11 +46,10 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
     }
 
+    // Runs when application is closed and disposes the stage to free up memory, prevents memory leaks.
     override fun dispose() {
         level.dispose()
     }
-
-
 
     override fun touchDown(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
         return true
