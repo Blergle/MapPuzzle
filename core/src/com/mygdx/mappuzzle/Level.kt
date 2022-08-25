@@ -17,7 +17,9 @@ class Level {
         }
     }
 
-/** */
+/**
+ * @param x value of the
+ * */
     fun get(x : Float, y : Float) : Piece?{
         for(Piece in pieces){
             if(Piece.isIn(x,y)){
@@ -27,10 +29,17 @@ class Level {
         return null
     }
 
+    /** Function is to add a piece to the drawing
+     * @param p a piece to be added to the list
+     *
+     */
     fun addPiece(p : Piece){
         pieces.add(p)
     }
 
+    /**
+     * Dispose the piece. It must not be used after that.
+     */
     fun dispose(){
         for(Piece in pieces){
             Piece.dispose()
