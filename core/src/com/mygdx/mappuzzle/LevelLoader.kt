@@ -12,6 +12,9 @@ import com.mapbox.geojson.MultiPolygon
  */
 class LevelLoader {
 
+    /**
+     * This function is to create the map of Hungary.
+     */
     fun createHungary() : Level{
         var hungary = FeatureCollection.fromJson(Gdx.files.internal("hungary.json").readString());
         var l = Level()
