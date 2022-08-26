@@ -42,7 +42,7 @@ class Piece() {
      * returns true if so. Used mostly to see if the object has been clicked or not.
      */
     fun isIn(x : Float, y : Float): Boolean {
-        if(x > this.polygon!!.x && x < this.polygon!!.x + this.width && y > this.polygon!!.y && y < this.polygon!!.y + this.height){
+        if(x >polygon!!.x + (minX - offsetX)   && x < polygon!!.x + (minX - offsetX) + this.width && y > polygon!!.y + (minY - offsetY) && y < polygon!!.y + (minY - offsetY) + this.height){
             return true
         }
         return false

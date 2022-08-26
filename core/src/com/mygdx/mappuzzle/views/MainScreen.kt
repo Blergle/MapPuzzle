@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.math.MathUtils
+import com.badlogic.gdx.math.Vector3
 import com.badlogic.gdx.utils.Json
 import com.badlogic.gdx.utils.ScreenUtils
 import com.badlogic.gdx.utils.viewport.ScreenViewport
@@ -91,20 +92,29 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
     }
 
     override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
+        currentPiece = null;
+        dragging = false;
         return true
     }
-
+    var dragging = false;
+    var currentPiece : Piece? = null;
     /**
      * listener used to drag and move pieces on click
      * the coordinate system for the mouse and for the screen is slightly different so if
      * this ever produces an unexpected result thats probably why
      */
     override fun touchDragged(screenX: Int, screenY: Int, pointer: Int): Boolean {
-        var mouseY = Gdx.graphics.height-screenY.toFloat()
-        var currentPiece = level.get(screenX.toFloat(), mouseY.toFloat())
-        if(currentPiece != null){
-            currentPiece.setX(screenX.toFloat() - currentPiece.width/2)
-            currentPiece.setY(mouseY.toFloat() - currentPiece.height/2)
+        var worldCoordinates = camera.unproject(Vector3(screenX.toFloat(), screenY.toFloat(), 0f))
+        if(!dragging) {
+            currentPiece = level.get(worldCoordinates.x, worldCoordinates.y)
+            if (currentPiece != null) {
+                dragging = true
+                currentPiece!!.setX(worldCoordinates.x - (currentPiece!!.width/2 + (currentPiece!!.minX - currentPiece!!.offsetX)))
+                currentPiece!!.setY(worldCoordinates.y - (currentPiece!!.height/2 + (currentPiece!!.minY - currentPiece!!.offsetY)))
+            }
+        }else{
+            currentPiece!!.setX(worldCoordinates.x - (currentPiece!!.width/2 + (currentPiece!!.minX - currentPiece!!.offsetX)))
+            currentPiece!!.setY(worldCoordinates.y - (currentPiece!!.height/2 + (currentPiece!!.minY - currentPiece!!.offsetY)))
         }
 
         return true
