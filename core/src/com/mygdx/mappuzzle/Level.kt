@@ -8,15 +8,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
  * currently just contains an array of pieces for drawing.
  */
 class Level {
-
+    var outline : Piece? = null;
     val pieces: MutableList<Piece> = ArrayList()
 
     fun draw(batch : PolygonSpriteBatch) {
+        outline!!.draw(batch);
         for(Piece in pieces){
             Piece.draw(batch)
         }
     }
-
 /** */
     fun get(x : Float, y : Float) : Piece?{
         for(Piece in pieces){
@@ -30,11 +30,4 @@ class Level {
     fun addPiece(p : Piece){
         pieces.add(p)
     }
-
-    fun dispose(){
-        for(Piece in pieces){
-            Piece.dispose()
-        }
-    }
-
 }

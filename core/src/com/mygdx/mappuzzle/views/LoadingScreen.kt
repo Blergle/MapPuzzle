@@ -16,6 +16,7 @@ class LoadingScreen(var game : MapPuzzle) : Screen {
     override fun render(delta: Float) {
         //switches screen onces all the assets are loaded
         if(game.assetManager!!.update(17)){
+            dispose();
             game.screen = MenuScreen(game)
         }
     }
