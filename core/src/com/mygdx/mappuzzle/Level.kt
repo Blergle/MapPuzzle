@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
  */
 class Level {
     var outline : Piece? = null;
-    val pieces: MutableList<Piece> = ArrayList()
+    var pieces: MutableList<Piece> = ArrayList()
 
     fun draw(batch : PolygonSpriteBatch) {
         outline!!.draw(batch);
@@ -26,6 +26,16 @@ class Level {
         }
         return null
     }
+
+    fun sort(){
+        val sorted = (pieces.sortedWith(compareBy { -it.holes.size }))
+        pieces.clear();
+        for(p in sorted){
+            pieces.add(p);
+        }
+    }
+
+
 
     fun addPiece(p : Piece){
         pieces.add(p)

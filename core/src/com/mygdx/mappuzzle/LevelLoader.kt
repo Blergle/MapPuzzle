@@ -13,29 +13,31 @@ import kotlin.random.Random
  */
 class LevelLoader(var game : MapPuzzle) {
 
-    fun createHungary() : Level{
+    fun createLevel() : Level{
         var hungary = FeatureCollection.fromJson(Gdx.files.internal("hungary.json").readString());
-        var l = Level()
-        var features = hungary.features()
+        val l = Level()
+        val features = hungary.features()
 
         for(f in features!!) {
-            var piece = Piece()
-            for (p in (f.geometry() as MultiPolygon)!!.coordinates()[0][0]) {
-                piece.addPoint(p)
+            val piece = Piece()
+            val coordinates = (f.geometry() as MultiPolygon)!!.coordinates()
+            val color = Random.nextInt(0, game.colors!!.colors.size);
+            piece.createPolygon(game.colors!!.colors[color], coordinates[0][0])
+
+            if(coordinates[0].size>1){
+                for(i in 1 until coordinates[0].size){
+                    piece.createHole(game.colors!!.holeColor!!, coordinates[0][i])
+                }
             }
-            var color = Random.nextInt(0, game.colors!!.colors.size);
-            piece.createPolygon(game.colors!!.colors[color])
             l.addPiece(piece)
+            l.sort()
         }
+
 
         hungary = FeatureCollection.fromJson(Gdx.files.internal("hungary_0.json").readString())
-        var piece = Piece()
-
-        for (p in (hungary.features()!![0].geometry() as MultiPolygon).coordinates()[0][0]) {
-            piece.addPoint(p)
-        }
-
-        piece.createPolygon(game.colors!!.outlineColor!!)
+        val piece = Piece()
+        val coordinates = (hungary.features()!![0].geometry() as MultiPolygon).coordinates()
+        piece.createPolygon(game.colors!!.outlineColor!!, coordinates[0][0])
         l.outline = piece;
         return l
 

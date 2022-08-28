@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture
 class Colors {
     val colors : ArrayList<Texture> = ArrayList()
     var outlineColor : Texture? = null;
+    var holeColor : Texture? =  null;
 
     /**
      * creates all the colors to be used for pieces.
@@ -21,7 +22,11 @@ class Colors {
         pix.setColor(Color.GRAY)
         pix.fill();
         outlineColor = Texture(pix)
-
+        //hole color
+        pix = Pixmap(1,1,Pixmap.Format.RGBA8888);
+        pix.setColor(Color.GRAY);
+        pix.fill();
+        holeColor = Texture(pix);
         //RED
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
         pix.setColor(Color.RED)
@@ -45,12 +50,7 @@ class Colors {
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.OLIVE)
-        pix.fill();
-        colors.add(Texture(pix))
-
-        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.PURPLE)
+        pix.setColor(Color.SKY)
         pix.fill();
         colors.add(Texture(pix))
 
@@ -82,6 +82,7 @@ class Colors {
      */
     fun dispose(){
         outlineColor!!.dispose();
+        holeColor!!.dispose();
         for(color in colors){
             color.dispose();
         }

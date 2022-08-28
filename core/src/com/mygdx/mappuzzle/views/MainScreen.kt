@@ -1,22 +1,11 @@
 package com.mygdx.mappuzzle
 
 import com.badlogic.gdx.*
-import com.badlogic.gdx.files.FileHandle
-import com.badlogic.gdx.graphics.Camera
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.math.Vector3
-import com.badlogic.gdx.utils.Json
 import com.badlogic.gdx.utils.ScreenUtils
-import com.badlogic.gdx.utils.viewport.ScreenViewport
-import com.badlogic.gdx.utils.viewport.Viewport
-import com.mapbox.geojson.FeatureCollection
-import java.awt.Image
-import java.util.*
-import javax.xml.catalog.CatalogFeatures
-import kotlin.random.Random
 
 /**
  * Main Screen of the game, this is where the level will be shown and the game is actually played
@@ -38,15 +27,16 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
         Gdx.input.inputProcessor = this
 
         //creates and sets the level to hungary
-        level = l.createHungary()
+        level = l.createLevel()
         camera.viewportWidth=(level.outline!!.width);
         camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat());
         camera.position.set(camera.viewportWidth/2,camera.viewportHeight/2,0f)
         level.outline!!.polygon!!.setPosition(level.outline!!.offsetX - level.outline!!.minX, camera.viewportHeight-(level.outline!!.height))
 
         for(p in level.pieces){
-            p.polygon!!.setPosition(Random.nextDouble(0.0, (camera.viewportWidth).toDouble()).toFloat(),
-                    Random.nextDouble(0.0, camera.viewportHeight/2.toDouble()).toFloat())
+            /*p.polygon!!.setPosition(Random.nextDouble(0.0, (camera.viewportWidth).toDouble()).toFloat(),
+                    Random.nextDouble(0.0, camera.viewportHeight/2.toDouble()).toFloat())*/
+            p.polygon!!.setPosition(2f,1f);
         }
 
     }
@@ -56,15 +46,27 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
 
 
 
-
+    val img = Texture(Gdx.files.internal("complete.png"));
 
     override fun render(delta: Float) {
+        var completed = true;
         camera.update();
         game.batch!!.projectionMatrix = camera.combined;
         ScreenUtils.clear(color)
         game.batch!!.begin()
         level.draw(game.batch!!)
+
+        for(p in level.pieces){
+            if(!p.checkPos(level.outline!!.minX,level.outline!!.minY, camera.viewportHeight, level.outline!!.height)){
+                completed = false;
+            }
+        }
+        if(completed){
+            game.batch!!.draw(img, 0f, camera.viewportHeight/2, camera.viewportWidth, 2f)
+        }
+
         game.batch!!.end()
+
     }
 
     override fun resize(width: Int, height: Int) {
