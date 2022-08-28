@@ -34,14 +34,18 @@ class Piece() {
     val polygons = ArrayList<Piece>()
     val holes = ArrayList<Piece>()
 
-    constructor(color : Texture, points : List<Point>) : this() {
-        createPolygon(color, points);
+    constructor(color : Texture, points : List<Point>, heightOffset : Float) : this() {
+        createPolygon(color, points, heightOffset);
     }
     /**
      * draws the polygon
      */
     fun draw(batch : PolygonSpriteBatch){
         polygon!!.draw(batch)
+        for(p in polygons){
+            p.polygon!!.setPosition(polygon!!.x + (p.offsetX-offsetX),polygon!!.y + (p.offsetY-offsetY)*heightOffset)
+            p.draw(batch)
+        }
         for(p in holes){
             p.polygon!!.setPosition(polygon!!.x + (p.offsetX-offsetX),polygon!!.y + (p.offsetY-offsetY)*heightOffset)
             p.draw(batch)
@@ -60,9 +64,31 @@ class Piece() {
     }
 
     fun createHole(color : Texture, points: List<Point>){
-        holes.add(Piece(color, points));
+        holes.add(Piece(color, points, heightOffset));
     }
 
+    fun addPolygon(color : Texture, points : List<Point>){
+        polygons.add(Piece(color, points, heightOffset));
+    }
+
+    fun recalculateValues(){
+        for(p in polygons){
+            if(p.minX < minX){
+                minX = p.minX
+            }
+            if(p.maxX > maxX){
+                maxX= p.maxX
+            }
+            if(p.minY < minY){
+                minY = p.minY
+            }
+            if(p.maxY > maxY){
+                maxY = p.maxY
+            }
+        }
+        width = maxX - minX
+        height = (maxY - minY) *heightOffset
+    }
 
     /**
      * polygon sprite which will be used to draw the Piece object, using the polygonSprite will allow
@@ -70,7 +96,7 @@ class Piece() {
      *
      * @param color the color of the piece.
      */
-    fun createPolygon(color : Texture, points : List<Point>){
+    fun createPolygon(color : Texture, points : List<Point>, heightOffset : Float){
         //this section converts the geojson points into a format which can be turned into a polygon sprite
         val floats = FloatArray(points.size*2)
         var j = 0;
@@ -101,7 +127,7 @@ class Piece() {
             }
         }
 
-        heightOffset = 7f/4.5f;
+        this.heightOffset = heightOffset;
         width = maxX - minX;
         height = (maxY - minY)*heightOffset;
 
@@ -118,10 +144,10 @@ class Piece() {
      * checks if this piece is in the right place and returns true if so
      * @return true if the piece is in the right place and false if not.
      */
-    fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float) : Boolean{
-        if(polygon!!.x + outlineMinX<= offsetX + 0.1f/width && polygon!!.x + outlineMinX >= offsetX - 0.1f/width){
+    fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float, outlineWidth : Float) : Boolean{
+        if(polygon!!.x + outlineMinX<= offsetX + 0.01f*outlineWidth && polygon!!.x + outlineMinX >= offsetX - 0.01f*outlineWidth){
 
-            if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.2f/height &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.2f/height){
+            if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.01f*outlineHeight &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.01f*outlineHeight){
                 return true;
             }
         }

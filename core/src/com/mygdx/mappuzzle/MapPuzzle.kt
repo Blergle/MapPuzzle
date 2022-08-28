@@ -24,6 +24,8 @@ class MapPuzzle : Game() {
     //colors used for pieces
     var colors : Colors? = null;
 
+    var levels : ArrayList<String>? = null;
+
     /**
      * runs on application startup,
      * put any initializers for global variables in here
@@ -33,8 +35,15 @@ class MapPuzzle : Game() {
         batch = PolygonSpriteBatch(32767)
         colors = Colors();
         colors!!.createColors()
+        levels = ArrayList();
+        createLevels()
         //this command switches the current screen being displayed
         this.setScreen(LoadingScreen(this))
+    }
+
+    fun createLevels(){
+        levels!!.add("hungary");
+        levels!!.add("france");
     }
 
     override fun render() {

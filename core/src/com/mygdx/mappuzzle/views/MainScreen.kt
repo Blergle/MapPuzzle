@@ -27,7 +27,7 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
         Gdx.input.inputProcessor = this
 
         //creates and sets the level to hungary
-        level = l.createLevel()
+        level = l.createLevel(game.levels!![1])
         camera.viewportWidth=(level.outline!!.width);
         camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat());
         camera.position.set(camera.viewportWidth/2,camera.viewportHeight/2,0f)
@@ -57,12 +57,12 @@ class MainScreen(var game : MapPuzzle) : Screen, InputAdapter() {
         level.draw(game.batch!!)
 
         for(p in level.pieces){
-            if(!p.checkPos(level.outline!!.minX,level.outline!!.minY, camera.viewportHeight, level.outline!!.height)){
+            if(!p.checkPos(level.outline!!.minX,level.outline!!.minY, camera.viewportHeight, level.outline!!.height, level.outline!!.width)){
                 completed = false;
             }
         }
         if(completed){
-            game.batch!!.draw(img, 0f, camera.viewportHeight/2, camera.viewportWidth, 2f)
+            game.batch!!.draw(img, 0f, camera.viewportHeight/2, camera.viewportWidth, camera.viewportWidth*(1467f/2200f))
         }
 
         game.batch!!.end()

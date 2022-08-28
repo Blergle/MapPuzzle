@@ -1,2 +1,0 @@
-{"numerator": 6,
-"denominator": 7.5}
