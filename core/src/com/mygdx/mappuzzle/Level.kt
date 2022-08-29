@@ -19,7 +19,7 @@ class Level {
     }
 /** */
     fun get(x : Float, y : Float) : Piece?{
-        for(Piece in pieces){
+        for(Piece in pieces.reversed()){
             if(Piece.isIn(x,y)){
                 return Piece
             }
