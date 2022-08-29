@@ -33,6 +33,10 @@ class MapPuzzle : Game() {
         this.setScreen(LoadingScreen(this))
     }
 
+    /**
+     * this is where level ids are added to the game,
+     * adding an id here will eventually enable the game to pick it and load it.
+     */
     fun createLevels(){
         levels!!.add("hungary");
         levels!!.add("france");

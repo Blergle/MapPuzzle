@@ -24,7 +24,9 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     var level : Level = Level()
     var camera : OrthographicCamera = OrthographicCamera();
 
-
+    /**
+     * this function is called when the screen is shown, mostly used ot initialise values.
+     */
     override fun show() {
 
 
@@ -97,11 +99,8 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     }
     var dragging = false;
     var currentPiece : Piece? = null;
-    /**
-     * listener used to drag and move pieces on click
-     * the coordinate system for the mouse and for the screen is slightly different so if
-     * this ever produces an unexpected result thats probably why
-     */
+
+
     override fun pan(x : Float,y :Float,deltaX : Float,deltaY : Float): Boolean {
         val worldCoordinates = camera.unproject(Vector3(x.toFloat(), y.toFloat(), 0f))
         if(!dragging) {
