@@ -8,20 +8,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
  * currently just contains an array of pieces for drawing.
  */
 class Level {
-
-    val pieces: MutableList<Piece> = ArrayList()
+    var outline : Piece? = null;
+    var pieces: MutableList<Piece> = ArrayList()
 
     fun draw(batch : PolygonSpriteBatch) {
+        outline!!.draw(batch);
         for(Piece in pieces){
             Piece.draw(batch)
         }
     }
-
-/**
- * @param x value of the
- * */
+/** */
     fun get(x : Float, y : Float) : Piece?{
-        for(Piece in pieces){
+        for(Piece in pieces.reversed()){
             if(Piece.isIn(x,y)){
                 return Piece
             }
@@ -29,21 +27,17 @@ class Level {
         return null
     }
 
-    /** Function is to add a piece to the drawing
-     * @param p a piece to be added to the list
-     *
-     */
-    fun addPiece(p : Piece){
-        pieces.add(p)
-    }
-
-    /**
-     * Dispose the piece. It must not be used after that.
-     */
-    fun dispose(){
-        for(Piece in pieces){
-            Piece.dispose()
+    fun sort(){
+        val sorted = (pieces.sortedWith(compareBy { -it.holes.size }))
+        pieces.clear();
+        for(p in sorted){
+            pieces.add(p);
         }
     }
 
+
+
+    fun addPiece(p : Piece){
+        pieces.add(p)
+    }
 }

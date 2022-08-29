@@ -45,6 +45,7 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // Listen to when the exit button is pressed, when pressed exit the app.
         exit.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
+                dispose();
                 Gdx.app.exit()
             }
         })
@@ -62,6 +63,7 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // change screen method and change to the preferences screen.
         settings.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
+                dispose();
                 game.screen = SettingsScreen(game)
             }
         })

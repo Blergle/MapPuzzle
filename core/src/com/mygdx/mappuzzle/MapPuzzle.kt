@@ -13,6 +13,10 @@ class MapPuzzle : Game() {
     var batch: PolygonSpriteBatch? = null
     //manages external assets that need to be loaded
     var assetManager: AssetManager? = null;
+    //colors used for pieces
+    var colors : Colors? = null;
+
+    var levels : ArrayList<String>? = null;
 
     /**
      * runs on application startup,
@@ -20,9 +24,18 @@ class MapPuzzle : Game() {
      */
     override fun create() {
         assetManager = AssetManager();
-        batch = PolygonSpriteBatch()
+        batch = PolygonSpriteBatch(32767)
+        colors = Colors();
+        colors!!.createColors()
+        levels = ArrayList();
+        createLevels()
         //this command switches the current screen being displayed
         this.setScreen(LoadingScreen(this))
+    }
+
+    fun createLevels(){
+        levels!!.add("hungary");
+        levels!!.add("france");
     }
 
     override fun render() {
@@ -36,5 +49,7 @@ class MapPuzzle : Game() {
      */
     override fun dispose() {
         batch!!.dispose()
+        colors!!.dispose();
+        assetManager!!.dispose();
     }
 }

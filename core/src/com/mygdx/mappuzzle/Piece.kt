@@ -1,5 +1,6 @@
 package com.mygdx.mappuzzle
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.Texture
@@ -15,16 +16,40 @@ import com.mapbox.geojson.Point
  * the country being shown
  */
 class Piece() {
-    var height = 200
-    var width = 200
-    //list of points in its polygon
-    val points : ArrayList<Point> = ArrayList();
+    var height = 200f
+    var width = 200f
 
+    var minX = 0f;
+    var maxX = 0f;
+    var minY = 0f;
+    var maxY = 0f;
+
+    var heightOffset = 0f;
+
+    var offsetX = 0f;
+    var offsetY = 0f;
+
+
+    var polygon : PolygonSprite? = null;
+    val polygons = ArrayList<Piece>()
+    val holes = ArrayList<Piece>()
+
+    constructor(color : Texture, points : List<Point>, heightOffset : Float) : this() {
+        createPolygon(color, points, heightOffset);
+    }
     /**
      * draws the polygon
      */
     fun draw(batch : PolygonSpriteBatch){
         polygon!!.draw(batch)
+        for(p in polygons){
+            p.polygon!!.setPosition(polygon!!.x + (p.offsetX-offsetX),polygon!!.y + (p.offsetY-offsetY)*heightOffset)
+            p.draw(batch)
+        }
+        for(p in holes){
+            p.polygon!!.setPosition(polygon!!.x + (p.offsetX-offsetX),polygon!!.y + (p.offsetY-offsetY)*heightOffset)
+            p.draw(batch)
+        }
     }
 
     /**
@@ -32,62 +57,101 @@ class Piece() {
      * returns true if so. Used mostly to see if the object has been clicked or not.
      */
     fun isIn(x : Float, y : Float): Boolean {
-        if(x > this.polygon!!.x && x < this.polygon!!.x + this.width && y > this.polygon!!.y && y < this.polygon!!.y + this.height){
+        if(x >polygon!!.x + (minX - offsetX)   && x < polygon!!.x + (minX - offsetX) + this.width && y > polygon!!.y + (minY - offsetY) && y < polygon!!.y + (minY - offsetY) + this.height){
             return true
         }
         return false
     }
 
-    /**
-     * add a point to this objects polygon
-     */
-    fun addPoint(p : Point){
-        points.add(p)
+    fun createHole(color : Texture, points: List<Point>){
+        holes.add(Piece(color, points, heightOffset));
+    }
+
+    fun addPolygon(color : Texture, points : List<Point>){
+        polygons.add(Piece(color, points, heightOffset));
+    }
+
+    fun recalculateValues(){
+        for(p in polygons){
+            if(p.minX < minX){
+                minX = p.minX
+            }
+            if(p.maxX > maxX){
+                maxX= p.maxX
+            }
+            if(p.minY < minY){
+                minY = p.minY
+            }
+            if(p.maxY > maxY){
+                maxY = p.maxY
+            }
+        }
+        width = maxX - minX
+        height = (maxY - minY) *heightOffset
     }
 
     /**
      * polygon sprite which will be used to draw the Piece object, using the polygonSprite will allow
      * the polygon to undergo transformations like scaling much easier
+     *
+     * @param color the color of the piece.
      */
-    var polygon : PolygonSprite? = null;
-    var tex : Texture? = null
-    fun createPolygon(){
-        //this section allows the polygon to be filled in with a block of color
-        var pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-
-        //change the color here to switch what color the polygon will be drawn as
-        pix.setColor(Color.RED)
-        pix.fill();
-        tex = Texture(pix)
-
+    fun createPolygon(color : Texture, points : List<Point>, heightOffset : Float){
         //this section converts the geojson points into a format which can be turned into a polygon sprite
-        var floats = FloatArray(points.size*2)
+        val floats = FloatArray(points.size*2)
         var j = 0;
-        for(i in 0 until points.size){
-            floats[j++] = points[i].longitude().toFloat()
-            floats[j++] = points[i].latitude().toFloat()
+        offsetX = points[0].longitude().toFloat();
+        offsetY = points[0].latitude().toFloat();
+        minX = points[0].longitude().toFloat();
+        maxX = points[0].longitude().toFloat();
+
+        minY = points[0].latitude().toFloat();
+        maxY = points[0].latitude().toFloat();
+
+        for(i in points.indices){
+            var x = points[i].longitude().toFloat() - offsetX
+            var y = points[i].latitude().toFloat() - offsetY
+            floats[j++] = x
+            floats[j++] = y
+            if(points[i].longitude().toFloat() < minX){
+                minX = points[i].longitude().toFloat()
+            }
+            if(points[i].longitude().toFloat() > maxX){
+                maxX = points[i].longitude().toFloat()
+            }
+            if(points[i].latitude().toFloat() < minY){
+                minY = points[i].latitude().toFloat()
+            }
+            if(points[i].latitude().toFloat() > maxY){
+                maxY = points[i].latitude().toFloat()
+            }
         }
-        var triangulator = EarClippingTriangulator()
-        var pr = PolygonRegion(TextureRegion(tex), floats, triangulator.computeTriangles(floats).toArray())
+
+        this.heightOffset = heightOffset;
+        width = maxX - minX;
+        height = (maxY - minY)*heightOffset;
+
+        val triangulator = EarClippingTriangulator()
+        val pr = PolygonRegion(TextureRegion(color), floats, triangulator.computeTriangles(floats).toArray().clone())
         polygon = PolygonSprite(pr)
 
-        //contains functions for positioning the polygon, setposition determines where it will be drawn
-        polygon!!.setPosition(100f,100f)
-        //set scale determines its size (the geojson coordinates are quite small so this number has to be pretty large)
-        //a way to do this dynamically would be nice
-        polygon!!.setScale(200f)
-        //im not entirely sure what this does but its required
-        polygon!!.setOrigin(floats[0],floats[1])
-        //sets the width and height of this object, currently this is only used for determining if the object has been
-        // clicked and has nothing to do with how its actually drawn
-        //this number will have to be set again if the pieces scale is ever changed
-        width = polygon!!.width.toInt()*200
-        height = polygon!!.height.toInt()*200
 
+        polygon!!.setOrigin(0f, 0f)
+        polygon!!.setScale(1f, heightOffset);
+    }
 
+    /**
+     * checks if this piece is in the right place and returns true if so
+     * @return true if the piece is in the right place and false if not.
+     */
+    fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float, outlineWidth : Float) : Boolean{
+        if(polygon!!.x + outlineMinX<= offsetX + 0.01f*outlineWidth && polygon!!.x + outlineMinX >= offsetX - 0.01f*outlineWidth){
 
-        pix.dispose()
-
+            if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.01f*outlineHeight &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.01f*outlineHeight){
+                return true;
+            }
+        }
+            return false;
     }
 
     @JvmName("setX1")
@@ -98,9 +162,4 @@ class Piece() {
     fun setY(y : Float){
         polygon!!.setPosition(polygon!!.x, y)
     }
-    fun dispose(){
-        tex!!.dispose()
-
-    }
-
 }
