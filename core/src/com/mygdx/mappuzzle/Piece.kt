@@ -23,7 +23,8 @@ class Piece() {
     var maxX = 0f;
     var minY = 0f;
     var maxY = 0f;
-
+    /** the difference between the x and y units, this is necessary because the length
+     *  of latitude units to longitude units vary depending on where you are on the planet*/
     var heightOffset = 0f;
 
     var offsetX = 0f;
@@ -34,11 +35,18 @@ class Piece() {
     val polygons = ArrayList<Piece>()
     val holes = ArrayList<Piece>()
 
+    /**
+     * A constructor used to initialise a new Piece with and then create a base polygon
+     * @param color the color of the polygon
+     * @param points the coordinates that make up the new polygon
+     * @param heightOffset the height difference between the width and height units.
+     */
     constructor(color : Texture, points : List<Point>, heightOffset : Float) : this() {
         createPolygon(color, points, heightOffset);
     }
     /**
-     * draws the polygon
+     * draws the polygon and all its child polygons
+     * @param batch the batch used to draw thew polygon
      */
     fun draw(batch : PolygonSpriteBatch){
         polygon!!.draw(batch)
@@ -53,8 +61,12 @@ class Piece() {
     }
 
     /**
-     * checks to see if the given x and y coordinates are currently in this objexts bounds
+     * checks to see if the given x and y coordinates are currently in this objects bounds
      * returns true if so. Used mostly to see if the object has been clicked or not.
+     *
+     * @param x the x coordinate of the mouse click
+     * @param y the y coordinate of the mouse click
+     * @return true if the mouse click was within this polygons width and height
      */
     fun isIn(x : Float, y : Float): Boolean {
         if(x >polygon!!.x + (minX - offsetX)   && x < polygon!!.x + (minX - offsetX) + this.width && y > polygon!!.y + (minY - offsetY) && y < polygon!!.y + (minY - offsetY) + this.height){
@@ -63,14 +75,30 @@ class Piece() {
         return false
     }
 
+    /**
+     * creates a new polygon which will be drawn like a hole in the base polygon.
+     * used to represent lakes and when a region is inside another region.
+     * @param color the color of the hole
+     * @param points the coordinates that make up the hole
+     */
     fun createHole(color : Texture, points: List<Point>){
         holes.add(Piece(color, points, heightOffset));
     }
 
+    /**
+     * adds a child polygon which this Piece also represents.
+     * Used for when a piece requires multiple polygons to be drawn.
+     * @param color the color of the new polygon.
+     * @param points the coordinates that make up the new polygon
+     */
     fun addPolygon(color : Texture, points : List<Point>){
         polygons.add(Piece(color, points, heightOffset));
     }
 
+    /**
+     * recalculates various values used for coordinate conversions like width and height, now taking in to account extra added
+     * polygons.
+     */
     fun recalculateValues(){
         for(p in polygons){
             if(p.minX < minX){
@@ -95,6 +123,8 @@ class Piece() {
      * the polygon to undergo transformations like scaling much easier
      *
      * @param color the color of the piece.
+     * @param points the coordinates that make up the polygon to be created.
+     * @param heightOffset the estimated offset of longitude units to latitude units in this region
      */
     fun createPolygon(color : Texture, points : List<Point>, heightOffset : Float){
         //this section converts the geojson points into a format which can be turned into a polygon sprite
@@ -142,6 +172,12 @@ class Piece() {
 
     /**
      * checks if this piece is in the right place and returns true if so
+     *
+     * @param outlineMinX the minimum x value of the outline piece in longitude
+     * @param outlineMinY the minimum y value of the outline piece in latitude units
+     * @param viewportHeight the height pof the viewport
+     * @param outlineHeight the height of the outline piece
+     * @param outlineWidth the width of the outlinePiece
      * @return true if the piece is in the right place and false if not.
      */
     fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float, outlineWidth : Float) : Boolean{

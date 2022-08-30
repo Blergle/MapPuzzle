@@ -13,6 +13,7 @@ import kotlin.random.Random
 
 /**
  * Main Screen of the game, this is where the level will be shown and the game is actually played
+ * @param game Main game object, contains useful objects that need to be passed to multiple screens
  */
 class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     //this object is used to load levels, probably a better way of doing this
@@ -28,14 +29,13 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
      * this function is called when the screen is shown, mostly used ot initialise values.
      */
     override fun show() {
-
-
         //makes it so mouse clicks are registered properly
         val gd : GestureDetector = GestureDetector(this)
         Gdx.input.inputProcessor = gd
 
-        //creates and sets the level to hungary
-        level = l.createLevel(game.levels!![1])
+        //creates and sets the level to random level in the list
+        //game.levels!![Random.nextInt(game.levels!!.size)]
+        level = l.createLevel(game.levels!![Random.nextInt(game.levels!!.size)])
         camera.viewportWidth=(level.outline!!.width);
         camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat());
         camera.position.set(camera.viewportWidth/2,camera.viewportHeight/2,0f)
@@ -52,6 +52,10 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 
     val img = Texture(Gdx.files.internal("complete.png"));
 
+    /**
+     * Main render loop of the screen, is called repeatedly every few miliseconds.
+     * @param delta the time between render calls in miliseconds
+     */
     override fun render(delta: Float) {
         var completed = true;
         camera.update();
@@ -99,7 +103,6 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     }
     var dragging = false;
     var currentPiece : Piece? = null;
-
 
     override fun pan(x : Float,y :Float,deltaX : Float,deltaY : Float): Boolean {
         val worldCoordinates = camera.unproject(Vector3(x.toFloat(), y.toFloat(), 0f))

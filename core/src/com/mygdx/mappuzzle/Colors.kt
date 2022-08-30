@@ -12,6 +12,7 @@ class Colors {
     val colors : ArrayList<Texture> = ArrayList()
     var outlineColor : Texture? = null;
     var holeColor : Texture? =  null;
+    var backgroundColor : Texture? = null;
 
     /**
      * creates all the colors to be used for pieces.
@@ -22,6 +23,11 @@ class Colors {
         pix.setColor(Color.GRAY)
         pix.fill();
         outlineColor = Texture(pix)
+        //Background color
+        pix = Pixmap(1,1,Pixmap.Format.RGBA8888)
+        pix.setColor(Color.LIGHT_GRAY)
+        pix.fill()
+        backgroundColor = Texture(pix)
         //hole color
         pix = Pixmap(1,1,Pixmap.Format.RGBA8888);
         pix.setColor(Color.GRAY);
@@ -29,48 +35,53 @@ class Colors {
         holeColor = Texture(pix);
         //RED
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.RED)
+        pix.setColor(Color.rgba8888(251f,210f,213f, 1f))
         pix.fill();
         colors.add(Texture(pix))
 
         //RED
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.BLUE)
+        pix.setColor(Color.rgba8888(241f,177f,202f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.GREEN)
+        pix.setColor(Color.rgba8888(219f,210f,123f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.YELLOW)
+        pix.setColor(Color.rgba8888(238f,214f,95f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.SKY)
+        pix.setColor(Color.rgba8888(255f,185f,145f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.TEAL)
+        pix.setColor(Color.rgba8888(170f,219f,161f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.NAVY)
+        pix.setColor(Color.rgba8888(156f,208f,224f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.ORANGE)
+        pix.setColor(Color.rgba8888(86f,177f,228f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.MAROON)
+        pix.setColor(Color.rgba8888(139f,157f,214f,1f))
+        pix.fill();
+        colors.add(Texture(pix))
+
+        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
+        pix.setColor(Color.rgba8888(203f,195f,232f,1f))
         pix.fill();
         colors.add(Texture(pix))
 
@@ -83,6 +94,7 @@ class Colors {
     fun dispose(){
         outlineColor!!.dispose();
         holeColor!!.dispose();
+        backgroundColor!!.dispose()
         for(color in colors){
             color.dispose();
         }

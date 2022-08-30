@@ -15,18 +15,41 @@ import kotlin.random.Random
  */
 class LevelLoader(var game : MapPuzzle) {
 
+    /**
+     * Creates the level based on the string id given.
+     * creates the level by reading in geojson coordinates from a file located in a path specified by the level string, and
+     * then creating pieces from that geojson information.
+     * this allows us to create extremely accurate geographical puzzle pieces.
+     * @param level a string representing the level to be created.
+     * @return the created level
+     */
     fun createLevel(level : String) : Level{
         var featureCollection = FeatureCollection.fromJson(Gdx.files.internal("levels/$level/$level-1.json").readString());
-        var numerator :Float= (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("numerator").asFloat()
-        var denominator :Float = (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("denominator").asFloat()
-        var heightOffset :Float = numerator/denominator;
+        val numerator :Float= (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("numerator").asFloat()
+        val denominator :Float = (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("denominator").asFloat()
+        val heightOffset :Float = numerator/denominator;
         val l = Level()
         val features = featureCollection.features()
-
+        var colors  = Array(game.colors!!.colors.size) { i -> true};
+        var n = 0;
         for(f in features!!) {
             val piece = Piece()
             val coordinates = (f.geometry() as MultiPolygon)!!.coordinates()
-            val color = Random.nextInt(0, game.colors!!.colors.size);
+            var color = 0
+            if(n==game.colors!!.colors.size){
+                colors  = Array(game.colors!!.colors.size) { i -> true };
+                n=0;
+            }else{
+                n++
+                var go = true;
+                while(go){
+                    color = Random.nextInt(0, game.colors!!.colors.size);
+                    if(colors[color]){
+                        colors[color]=false
+                        go=false
+                    }
+                }
+            }
             piece.createPolygon(game.colors!!.colors[color], coordinates[0][0], heightOffset)
             if(coordinates[0].size>1){
                 for(i in 1 until coordinates[0].size){
