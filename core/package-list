@@ -37,6 +37,7 @@ $dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/show/#/PointingToDeclar
 $dokka.location:com.mygdx.mappuzzle////PointingToDeclaration/core/com.mygdx.mappuzzle/index.html
 $dokka.location:com.mygdx.mappuzzle/Colors///PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/index.html
 $dokka.location:com.mygdx.mappuzzle/Colors/Colors/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/-colors.html
+$dokka.location:com.mygdx.mappuzzle/Colors/backgroundColor/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/background-color.html
 $dokka.location:com.mygdx.mappuzzle/Colors/colors/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/colors.html
 $dokka.location:com.mygdx.mappuzzle/Colors/createColors/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/create-colors.html
 $dokka.location:com.mygdx.mappuzzle/Colors/dispose/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/dispose.html
