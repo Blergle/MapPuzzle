@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
  * main Game class, controls which screen is currently being shown
  * and contains various global  variables that need to be passed between screens
  */
-class MapPuzzle : Game() {
+open class MapPuzzle : Game() {
     //used to draw polygons
     var batch: PolygonSpriteBatch? = null
     //manages external assets that need to be loaded
