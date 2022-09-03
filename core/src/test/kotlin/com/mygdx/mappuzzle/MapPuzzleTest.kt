@@ -1,62 +1,66 @@
 package com.mygdx.mappuzzle
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.Assert.*
 
-internal class MapPuzzleTest {
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
-    @org.junit.jupiter.api.BeforeEach
+class MapPuzzleTest {
+
+    @Before
     fun setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @After
     fun tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun getBatch() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun setBatch() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun getAssetManager() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun setAssetManager() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun getColors() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun setColors() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun getLevels() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun setLevels() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun create() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun createLevels() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun render() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     fun dispose() {
     }
 }
