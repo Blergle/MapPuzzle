@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture
  * small class used for creating and storing colors used for pieces.
  * makes managing and disposing of colors easier later down the line.
  */
-class Colors {
+open class Colors {
     val colors : ArrayList<Texture> = ArrayList()
     var outlineColor : Texture? = null;
     var holeColor : Texture? =  null;

@@ -107,8 +107,12 @@ class MapPuzzleTest {
         //assertTrue(mapPuzzle.screen == LoadingScreen(mapPuzzle)) //this should probably be UI testing only
     }
 
+    //this is already tested in createTest() - tests createLevels()
     @Test
-    fun createLevels() {
+    fun createLevelsTest() {
+        mapPuzzle.levels = ArrayList()
+        mapPuzzle.createLevels()
+        assertTrue(mapPuzzle.levels!!.contains("brazil"))
     }
 
     //probably don't need to test this
