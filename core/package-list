@@ -84,6 +84,7 @@ $dokka.location:com.mygdx.mappuzzle/MainScreen/render/#kotlin.Float/PointingToDe
 $dokka.location:com.mygdx.mappuzzle/MainScreen/resize/#kotlin.Int#kotlin.Int/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/resize.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/resume/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/resume.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/show/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/show.html
+$dokka.location:com.mygdx.mappuzzle/MainScreen/stage/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/stage.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/zoom/#kotlin.Float#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/zoom.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle///PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/index.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/MapPuzzle/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/-map-puzzle.html
