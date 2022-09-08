@@ -181,9 +181,9 @@ class Piece() {
      * @return true if the piece is in the right place and false if not.
      */
     fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float, outlineWidth : Float) : Boolean{
-        if(polygon!!.x + outlineMinX<= offsetX + 0.01f*outlineWidth && polygon!!.x + outlineMinX >= offsetX - 0.01f*outlineWidth){
+        if(polygon!!.x + outlineMinX<= offsetX + 0.05f*outlineWidth && polygon!!.x + outlineMinX >= offsetX - 0.05f*outlineWidth){
 
-            if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.01f*outlineHeight &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.01f*outlineHeight){
+            if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.05f*outlineHeight &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.05f*outlineHeight){
                 return true;
             }
         }

@@ -6,7 +6,7 @@ import com.mygdx.mappuzzle.views.MenuScreen
 
 /**
  * screen class used to load assets and levels before the main screen is shown
- * currently empty b ut if anything needs to be loaaded before a level can be shown put it here.
+ * currently empty but if anything needs to be loaaded before a level can be shown put it here.
  */
 class LoadingScreen(var game : MapPuzzle) : Screen {
     override fun show() {

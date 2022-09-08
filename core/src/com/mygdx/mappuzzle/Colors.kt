@@ -20,68 +20,88 @@ class Colors {
     fun createColors(){
         //Outline color
         var pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.GRAY)
+        pix.setColor(Color.DARK_GRAY)
         pix.fill();
         outlineColor = Texture(pix)
         //Background color
         pix = Pixmap(1,1,Pixmap.Format.RGBA8888)
-        pix.setColor(Color.LIGHT_GRAY)
+        pix.setColor(Color.GRAY)
         pix.fill()
         backgroundColor = Texture(pix)
         //hole color
         pix = Pixmap(1,1,Pixmap.Format.RGBA8888);
-        pix.setColor(Color.GRAY);
+        pix.setColor(Color.DARK_GRAY);
         pix.fill();
         holeColor = Texture(pix);
         //RED
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(251f,210f,213f, 1f))
+        pix.setColor(Color.RED)
         pix.fill();
         colors.add(Texture(pix))
 
         //RED
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(241f,177f,202f,1f))
+        pix.setColor(Color.GREEN)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(219f,210f,123f,1f))
+        pix.setColor(Color.BLUE)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(238f,214f,95f,1f))
+        pix.setColor(Color.YELLOW)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(255f,185f,145f,1f))
+        pix.setColor(Color.ORANGE)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(170f,219f,161f,1f))
+        pix.setColor(Color.MAROON)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(156f,208f,224f,1f))
+        pix.setColor(Color.MAGENTA)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(86f,177f,228f,1f))
+        pix.setColor(Color.VIOLET)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(139f,157f,214f,1f))
+        pix.setColor(Color.OLIVE)
         pix.fill();
         colors.add(Texture(pix))
 
         pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
-        pix.setColor(Color.rgba8888(203f,195f,232f,1f))
+        pix.setColor(Color.BROWN)
+        pix.fill();
+        colors.add(Texture(pix))
+
+        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
+        pix.setColor(Color.NAVY)
+        pix.fill();
+        colors.add(Texture(pix))
+
+        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
+        pix.setColor(Color.SCARLET)
+        pix.fill();
+        colors.add(Texture(pix))
+
+        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
+        pix.setColor(Color.CHARTREUSE)
+        pix.fill();
+        colors.add(Texture(pix))
+
+        pix = Pixmap(1,1, Pixmap.Format.RGBA8888);
+        pix.setColor(Color.TAN)
         pix.fill();
         colors.add(Texture(pix))
 

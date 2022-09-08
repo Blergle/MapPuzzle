@@ -18,13 +18,13 @@ import com.mygdx.mappuzzle.MapPuzzle
 // This class contains all the UI components and functionality of the main menu.
 class MenuScreen(var game: MapPuzzle) : Screen {
 
-    var stage: Stage
+    var stage: Stage = Stage(ScreenViewport())
 
     override fun show() {
         // Create a table that fills the screen. Everything else will go inside this table.
         val table = Table()
         table.setFillParent(true)
-        table.debug = true
+        //table.debug = true
         stage.addActor(table)
 
         // Import the UI assets from files.
@@ -38,9 +38,9 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        //table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
-        table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        //table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
         // Listen to when the exit button is pressed, when pressed exit the app.
         exit.addListener(object : ChangeListener() {
@@ -92,7 +92,6 @@ class MenuScreen(var game: MapPuzzle) : Screen {
     }
 
     init {
-        stage = Stage(ScreenViewport())
         Gdx.input.inputProcessor = stage
     }
 }

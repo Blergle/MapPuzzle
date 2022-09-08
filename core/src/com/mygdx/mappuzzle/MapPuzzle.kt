@@ -41,11 +41,9 @@ class MapPuzzle : Game() {
         levels!!.add("hungary");
         levels!!.add("france");
         levels!!.add("germany")
-        levels!!.add("china")
         levels!!.add("lithuania")
         levels!!.add("slovakia")
         levels!!.add("nepal")
-        levels!!.add("mexico")
         levels!!.add("brazil")
     }
 

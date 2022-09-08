@@ -8,7 +8,15 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.input.GestureDetector
 import com.badlogic.gdx.input.GestureDetector.GestureAdapter
 import com.badlogic.gdx.math.Vector3
+import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.scenes.scene2d.ui.Table
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.ScreenUtils
+import com.badlogic.gdx.utils.viewport.ScreenViewport
+import com.mygdx.mappuzzle.views.MenuScreen
 import kotlin.random.Random
 
 /**
@@ -24,6 +32,8 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 
     var level : Level = Level()
     var camera : OrthographicCamera = OrthographicCamera();
+
+    val stage = Stage(ScreenViewport())
 
     /**
      * this function is called when the screen is shown, mostly used ot initialise values.
@@ -45,6 +55,20 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
             p.polygon!!.setPosition(Random.nextDouble(0.0, (camera.viewportWidth).toDouble()).toFloat(),
                     Random.nextDouble(0.0, camera.viewportHeight/2.toDouble()).toFloat())
         }
+
+        val table = Table()
+        table.setFillParent(true)
+        stage.addActor(table)
+
+        val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
+        val backToMenu = TextButton("Back To Menu", skin)
+        table.add(backToMenu).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        backToMenu.addListener(object : ChangeListener() {
+            override fun changed(event: ChangeEvent, actor: Actor) {
+                dispose();
+                game.screen = MenuScreen(game)
+            }
+        })
 
     }
 
@@ -69,8 +93,11 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
                 completed = false;
             }
         }
-        if(completed){
+        if(completed&&!dragging){
             game.batch!!.draw(img, 0f, camera.viewportHeight/2, camera.viewportWidth, camera.viewportWidth*(1467f/2200f))
+            Gdx.input.inputProcessor = stage
+            stage.act()
+            stage.draw()
         }
 
         game.batch!!.end()
@@ -93,6 +120,7 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     }
 
     override fun dispose() {
+        stage.dispose()
     }
 
 
