@@ -18,6 +18,10 @@ class MapPuzzle : Game() {
 
     var levels : ArrayList<String>? = null;
 
+    var settings : Settings = Settings()
+
+    var dailyPuzzle: DailyPuzzle = DailyPuzzle(settings)
+
     /**
      * runs on application startup,
      * put any initializers for global variables in here
