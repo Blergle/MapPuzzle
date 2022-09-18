@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
  * this object will represent a Level so put anything level specific in here
  * currently just contains an array of pieces for drawing.
  */
-class Level {
+open class Level {
     var outline : Piece? = null;
     var pieces: MutableList<Piece> = ArrayList()
 
