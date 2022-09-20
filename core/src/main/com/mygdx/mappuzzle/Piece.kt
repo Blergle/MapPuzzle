@@ -15,7 +15,7 @@ import com.mapbox.geojson.Point
  * additionally contains a PolygonSprite which is a sprite of the complex polygon used to represent
  * the country being shown
  */
-class Piece() {
+open class Piece() {
     var height = 200f
     var width = 200f
 

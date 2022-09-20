@@ -13,7 +13,7 @@ import kotlin.random.Random
  * object used to load specific levels, currently just creates hungary
  * a way to do this dynamically is probably better but this works as a placeholder
  */
-class LevelLoader(var game : MapPuzzle) {
+open class LevelLoader(var game : MapPuzzle) {
 
     /**
      * Creates the level based on the string id given.
