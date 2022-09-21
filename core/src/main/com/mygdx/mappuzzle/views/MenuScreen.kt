@@ -3,6 +3,8 @@ package com.mygdx.mappuzzle.views
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.GL20
+import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
@@ -69,11 +71,18 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         })
     }
 
+    val bg = Texture(Gdx.files.internal("skin/background.png"))
+
     // The render method clears the screen before drawing the stage.
     override fun render(delta: Float) {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Math.min(Gdx.graphics.deltaTime, 1 / 30f))
+
+        game.batch!!.begin()
+        game.batch!!.draw(bg, 0f, 0f)
+        game.batch!!.end()
+
         stage.draw()
     }
 
