@@ -45,10 +45,10 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 
         //creates and sets the level to random level in the list
         //game.levels!![Random.nextInt(game.levels!!.size)]
-        if(game.settings.isRandom()) {
-            level = l.createLevel(game.levels!![Random.nextInt(game.levels!!.size)]) //may want to change this to be random per day, rather than per play
+        level = if(game.settings.isRandom()) {
+            l.createLevel(game.levels!![Random.nextInt(game.levels!!.size)]) //may want to change this to be random per day, rather than per play
         }else {
-            level = l.createLevel(game.levels!![game.settings.getLevel()]) //new level each day, in list order
+            l.createLevel(game.levels!![game.settings.getLevel()]) //new level each day, in list order
         }
         camera.viewportWidth=(level.outline!!.width);
         camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat());
