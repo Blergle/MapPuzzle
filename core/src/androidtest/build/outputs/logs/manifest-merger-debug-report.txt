@@ -1,0 +1,135 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b01f124b1ae55080185591b73999e688/transformed/appcompat-v7-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87edc983792bcccb8da44d3eea06e9ae/transformed/support-fragment-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ffbcdead2c052ff1533e181b134068b9/transformed/animated-vector-drawable-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b6af5b99b02ae0f6f6cb0b6e1e19db51/transformed/support-core-ui-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a88d181ce7765b5117b0acfc49583d39/transformed/support-core-utils-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e41de83bf076edb10d407fd7fe940a52/transformed/support-vector-drawable-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/0ff228a1e01f134b57206adb020f9ec6/transformed/loader-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ff9a48c86910a4eaa2b41370733c7c81/transformed/viewpager-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ecfce6d2e50c07058eff8995106ce935/transformed/coordinatorlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e791dfceb9d45425dc30d3e94461d45d/transformed/drawerlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/317918292ce5d733bec7b7736cb91a31/transformed/slidingpanelayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/2c707b942008e54108376f60cf1a09ad/transformed/customview-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ea2703e34a9b0f775148f9bfa693b183/transformed/swiperefreshlayout-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/1fd10cf5268aa34be2f2fb2548e8878f/transformed/asynclayoutinflater-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/fc2b1ac5850ac9d88b7e09e6067826d6/transformed/versionedparcelable-28.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a4029c1d4f8f1c156d7160efdd07a005/transformed/cursoradapter-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/be14691570f85b71dcf8a8e311e179a2/transformed/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87ebc6a8eaf9bdd127a3d0bbcb51ebf7/transformed/documentfile-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/74847145a19ef52e80727f458b32a980/transformed/localbroadcastmanager-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/86450bf19c4129bcd66040269836d638/transformed/print-28.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/d06c2598bd68290de49bdbb364cdd651/transformed/viewmodel-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/21c9a48d739a675bc2c778741d052bb8/transformed/livedata-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/eb455ad22d000178811385b05de45dee/transformed/livedata-core-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/3353fc62f932483856c0562ec51443d2/transformed/runtime-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/f538ef4e1e9443f71204fe111094cf87/transformed/interpolator-28.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+	package
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:1-13:12
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:5:5-11:50
+MERGED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/fc2b1ac5850ac9d88b7e09e6067826d6/transformed/versionedparcelable-28.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/fc2b1ac5850ac9d88b7e09e6067826d6/transformed/versionedparcelable-28.0.0/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml:11:9-47
+uses-sdk
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b01f124b1ae55080185591b73999e688/transformed/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b01f124b1ae55080185591b73999e688/transformed/appcompat-v7-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87edc983792bcccb8da44d3eea06e9ae/transformed/support-fragment-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87edc983792bcccb8da44d3eea06e9ae/transformed/support-fragment-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ffbcdead2c052ff1533e181b134068b9/transformed/animated-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ffbcdead2c052ff1533e181b134068b9/transformed/animated-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b6af5b99b02ae0f6f6cb0b6e1e19db51/transformed/support-core-ui-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/b6af5b99b02ae0f6f6cb0b6e1e19db51/transformed/support-core-ui-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a88d181ce7765b5117b0acfc49583d39/transformed/support-core-utils-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a88d181ce7765b5117b0acfc49583d39/transformed/support-core-utils-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e41de83bf076edb10d407fd7fe940a52/transformed/support-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e41de83bf076edb10d407fd7fe940a52/transformed/support-vector-drawable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/0ff228a1e01f134b57206adb020f9ec6/transformed/loader-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/0ff228a1e01f134b57206adb020f9ec6/transformed/loader-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ff9a48c86910a4eaa2b41370733c7c81/transformed/viewpager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ff9a48c86910a4eaa2b41370733c7c81/transformed/viewpager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ecfce6d2e50c07058eff8995106ce935/transformed/coordinatorlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ecfce6d2e50c07058eff8995106ce935/transformed/coordinatorlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e791dfceb9d45425dc30d3e94461d45d/transformed/drawerlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/e791dfceb9d45425dc30d3e94461d45d/transformed/drawerlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/317918292ce5d733bec7b7736cb91a31/transformed/slidingpanelayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/317918292ce5d733bec7b7736cb91a31/transformed/slidingpanelayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/2c707b942008e54108376f60cf1a09ad/transformed/customview-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/2c707b942008e54108376f60cf1a09ad/transformed/customview-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ea2703e34a9b0f775148f9bfa693b183/transformed/swiperefreshlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/ea2703e34a9b0f775148f9bfa693b183/transformed/swiperefreshlayout-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/1fd10cf5268aa34be2f2fb2548e8878f/transformed/asynclayoutinflater-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/1fd10cf5268aa34be2f2fb2548e8878f/transformed/asynclayoutinflater-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/5fed4796bc86fdf85453dbdd2fffc7e1/transformed/support-compat-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/fc2b1ac5850ac9d88b7e09e6067826d6/transformed/versionedparcelable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/fc2b1ac5850ac9d88b7e09e6067826d6/transformed/versionedparcelable-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a4029c1d4f8f1c156d7160efdd07a005/transformed/cursoradapter-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/a4029c1d4f8f1c156d7160efdd07a005/transformed/cursoradapter-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/be14691570f85b71dcf8a8e311e179a2/transformed/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/be14691570f85b71dcf8a8e311e179a2/transformed/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87ebc6a8eaf9bdd127a3d0bbcb51ebf7/transformed/documentfile-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/87ebc6a8eaf9bdd127a3d0bbcb51ebf7/transformed/documentfile-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/74847145a19ef52e80727f458b32a980/transformed/localbroadcastmanager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/74847145a19ef52e80727f458b32a980/transformed/localbroadcastmanager-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/86450bf19c4129bcd66040269836d638/transformed/print-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/86450bf19c4129bcd66040269836d638/transformed/print-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/d06c2598bd68290de49bdbb364cdd651/transformed/viewmodel-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/d06c2598bd68290de49bdbb364cdd651/transformed/viewmodel-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/21c9a48d739a675bc2c778741d052bb8/transformed/livedata-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/21c9a48d739a675bc2c778741d052bb8/transformed/livedata-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/eb455ad22d000178811385b05de45dee/transformed/livedata-core-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/eb455ad22d000178811385b05de45dee/transformed/livedata-core-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/3353fc62f932483856c0562ec51443d2/transformed/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/benscobie/.gradle/caches/transforms-3/3353fc62f932483856c0562ec51443d2/transformed/runtime-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/f538ef4e1e9443f71204fe111094cf87/transformed/interpolator-28.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/benscobie/.gradle/caches/transforms-3/f538ef4e1e9443f71204fe111094cf87/transformed/interpolator-28.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		ADDED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
+		INJECTED from /Users/benscobie/AndroidStudioProjects/MapPuzzle/core/androidtest/src/main/AndroidManifest.xml
