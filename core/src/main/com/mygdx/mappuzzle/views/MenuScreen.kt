@@ -5,16 +5,13 @@ import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
-import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.ScreenViewport
-import com.badlogic.gdx.utils.viewport.StretchViewport
 import com.mygdx.mappuzzle.MainScreen
 import com.mygdx.mappuzzle.MapPuzzle
 
@@ -23,7 +20,7 @@ class MenuScreen(var game: MapPuzzle) : Screen {
 
     var stage: Stage = Stage(ScreenViewport())
     var batch: SpriteBatch = SpriteBatch()
-    //val bg = TextureRegion(Texture(Gdx.files.internal("skin/background.png")),0,0, 393, 808)
+
     val bg = Texture(Gdx.files.internal("skin/background.png"))
 
     override fun show() {
