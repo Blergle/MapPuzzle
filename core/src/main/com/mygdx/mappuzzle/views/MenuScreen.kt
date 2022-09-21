@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
@@ -21,6 +22,9 @@ import com.mygdx.mappuzzle.MapPuzzle
 class MenuScreen(var game: MapPuzzle) : Screen {
 
     var stage: Stage = Stage(ScreenViewport())
+    var batch: SpriteBatch = SpriteBatch()
+    //val bg = TextureRegion(Texture(Gdx.files.internal("skin/background.png")),0,0, 393, 808)
+    val bg = Texture(Gdx.files.internal("skin/background.png"))
 
     override fun show() {
         // Create a table that fills the screen. Everything else will go inside this table.
@@ -71,7 +75,6 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         })
     }
 
-    val bg = Texture(Gdx.files.internal("skin/background.png"))
 
     // The render method clears the screen before drawing the stage.
     override fun render(delta: Float) {
@@ -79,9 +82,9 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Math.min(Gdx.graphics.deltaTime, 1 / 30f))
 
-        game.batch!!.begin()
-        game.batch!!.draw(bg, 0f, 0f)
-        game.batch!!.end()
+        batch.begin()
+        batch.draw(bg,0f,0f,Gdx.graphics.width.toFloat(),Gdx.graphics.height.toFloat())
+        batch.end()
 
         stage.draw()
     }
