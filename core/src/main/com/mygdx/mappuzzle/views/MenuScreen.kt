@@ -38,9 +38,9 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        //table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
-        //table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
         // Listen to when the exit button is pressed, when pressed exit the app.
         exit.addListener(object : ChangeListener() {
