@@ -103,7 +103,7 @@ class MapPuzzleTest {
         //assertNotNull(mapPuzzle.colors) //this doesn't work without headless backend
         //assertNotNull(mapPuzzle.colors!!.backgroundColor) //this doesn't work without headless backend
         assertNotNull(mapPuzzle.levels) //this doesn't work without headless backend
-        assertTrue(mapPuzzle.levels!!.contains("brazil")) //Checks call to createLevels(). Only works if createLevels() works - probably need to change that
+        assertTrue(mapPuzzle.levels!!.contains("Test1")) //Checks call to createLevels(). Only works if createLevels() works - probably need to change that
         //assertTrue(mapPuzzle.screen == LoadingScreen(mapPuzzle)) //this should probably be UI testing only
     }
 
@@ -112,7 +112,7 @@ class MapPuzzleTest {
     fun createLevelsTest() {
         mapPuzzle.levels = ArrayList()
         mapPuzzle.createLevels()
-        assertTrue(mapPuzzle.levels!!.contains("brazil"))
+        assertTrue(mapPuzzle.levels!!.contains("Test1"))
     }
 
     //probably don't need to test this
