@@ -12,6 +12,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.viewport.ScreenViewport
+import com.badlogic.gdx.utils.viewport.StretchViewport
+import com.mygdx.mappuzzle.DailyPuzzle
 import com.mygdx.mappuzzle.MainScreen
 import com.mygdx.mappuzzle.MapPuzzle
 
@@ -58,6 +60,7 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         play.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
                 dispose()
+                game.dailyPuzzle.pickDailyLevel((game.settings.getLevel() + 1) % game.levels!!.size)
                 game.screen = MainScreen(game)
             }
         })

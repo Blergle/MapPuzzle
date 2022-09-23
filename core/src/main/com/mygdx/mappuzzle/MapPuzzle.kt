@@ -18,6 +18,10 @@ open class MapPuzzle : Game() {
 
     var levels : ArrayList<String>? = null
 
+    lateinit var settings : Settings
+
+    lateinit var dailyPuzzle: DailyPuzzle
+
     /**
      * runs on application startup,
      * put any initializers for global variables in here
@@ -28,6 +32,8 @@ open class MapPuzzle : Game() {
         colors = Colors()
         colors!!.createColors()
         levels = ArrayList()
+        settings = Settings()
+        dailyPuzzle = DailyPuzzle(settings)
         createLevels()
         //this command switches the current screen being displayed
         this.setScreen(LoadingScreen(this))
