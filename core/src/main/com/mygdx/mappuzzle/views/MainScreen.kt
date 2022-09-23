@@ -57,27 +57,14 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
         stage.addActor(table)
 
         val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
-//        val backToMenu = TextButton("Back To Menu", skin)
-//        table.add(backToMenu).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
-//        backToMenu.addListener(object : ChangeListener() {
-//            override fun changed(event: ChangeEvent, actor: Actor) {
-//                dispose();
-//                game.screen = MenuScreen(game)
-//            }
-//        })
+
         val countryInfo = level.info
         val dialog = Dialog("done", skin)
         dialog.text(countryInfo)
         stage.addActor(dialog)
-        //dialog.show(stage)
         dialog.setPosition(300f, 300f)
         dialog.width = 700f
-
     }
-
-
-
-    //val img = Texture(Gdx.files.internal("complete.png"));
 
     /**
      * Main render loop of the screen, is called repeatedly every few milliseconds.
