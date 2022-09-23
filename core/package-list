@@ -14,6 +14,8 @@ $dokka.location:com.mygdx.mappuzzle.views/EndScreen/resume/#/PointingToDeclarati
 $dokka.location:com.mygdx.mappuzzle.views/EndScreen/show/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-end-screen/show.html
 $dokka.location:com.mygdx.mappuzzle.views/MenuScreen///PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/index.html
 $dokka.location:com.mygdx.mappuzzle.views/MenuScreen/MenuScreen/#com.mygdx.mappuzzle.MapPuzzle/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/-menu-screen.html
+$dokka.location:com.mygdx.mappuzzle.views/MenuScreen/batch/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/batch.html
+$dokka.location:com.mygdx.mappuzzle.views/MenuScreen/bg/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/bg.html
 $dokka.location:com.mygdx.mappuzzle.views/MenuScreen/dispose/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/dispose.html
 $dokka.location:com.mygdx.mappuzzle.views/MenuScreen/game/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/game.html
 $dokka.location:com.mygdx.mappuzzle.views/MenuScreen/hide/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-menu-screen/hide.html
@@ -45,9 +47,11 @@ $dokka.location:com.mygdx.mappuzzle/Colors/holeColor/#/PointingToDeclaration/co
 $dokka.location:com.mygdx.mappuzzle/Colors/outlineColor/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/outline-color.html
 $dokka.location:com.mygdx.mappuzzle/Level///PointingToDeclaration/core/com.mygdx.mappuzzle/-level/index.html
 $dokka.location:com.mygdx.mappuzzle/Level/Level/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/-level.html
+$dokka.location:com.mygdx.mappuzzle/Level/addInfo/#kotlin.String/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/add-info.html
 $dokka.location:com.mygdx.mappuzzle/Level/addPiece/#com.mygdx.mappuzzle.Piece/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/add-piece.html
 $dokka.location:com.mygdx.mappuzzle/Level/draw/#com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/draw.html
 $dokka.location:com.mygdx.mappuzzle/Level/get/#kotlin.Float#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/get.html
+$dokka.location:com.mygdx.mappuzzle/Level/info/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/info.html
 $dokka.location:com.mygdx.mappuzzle/Level/outline/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/outline.html
 $dokka.location:com.mygdx.mappuzzle/Level/pieces/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/pieces.html
 $dokka.location:com.mygdx.mappuzzle/Level/sort/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/sort.html
@@ -74,7 +78,6 @@ $dokka.location:com.mygdx.mappuzzle/MainScreen/dispose/#/PointingToDeclaration/
 $dokka.location:com.mygdx.mappuzzle/MainScreen/dragging/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/dragging.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/game/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/game.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/hide/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/hide.html
-$dokka.location:com.mygdx.mappuzzle/MainScreen/img/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/img.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/l/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/l.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/level/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/level.html
 $dokka.location:com.mygdx.mappuzzle/MainScreen/pan/#kotlin.Float#kotlin.Float#kotlin.Float#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-main-screen/pan.html
@@ -95,7 +98,6 @@ $dokka.location:com.mygdx.mappuzzle/MapPuzzle/create/#/PointingToDeclaration/co
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/createLevels/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/create-levels.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/dispose/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/dispose.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/levels/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/levels.html
-$dokka.location:com.mygdx.mappuzzle/MapPuzzle/render/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/render.html
 $dokka.location:com.mygdx.mappuzzle/Piece///PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/index.html
 $dokka.location:com.mygdx.mappuzzle/Piece/Piece/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/-piece.html
 $dokka.location:com.mygdx.mappuzzle/Piece/Piece/#com.badlogic.gdx.graphics.Texture#kotlin.collections.List[com.mapbox.geojson.Point]#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/-piece.html
