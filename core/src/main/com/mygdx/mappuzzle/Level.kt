@@ -58,6 +58,11 @@ open class Level {
         pieces.add(p)
     }
 
+    /**
+     * adds information about the country to a string stored
+     * in the level.
+     * @ param s is the string containing the country's information.
+     */
     fun addInfo(s : String) {
         info = s
     }
