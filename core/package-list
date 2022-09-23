@@ -36,6 +36,7 @@ $dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/render/#kotlin.Float/Po
 $dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/resize/#kotlin.Int#kotlin.Int/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-settings-screen/resize.html
 $dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/resume/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-settings-screen/resume.html
 $dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/show/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-settings-screen/show.html
+$dokka.location:com.mygdx.mappuzzle.views/SettingsScreen/stage/#/PointingToDeclaration/core/com.mygdx.mappuzzle.views/-settings-screen/stage.html
 $dokka.location:com.mygdx.mappuzzle////PointingToDeclaration/core/com.mygdx.mappuzzle/index.html
 $dokka.location:com.mygdx.mappuzzle/Colors///PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/index.html
 $dokka.location:com.mygdx.mappuzzle/Colors/Colors/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/-colors.html
@@ -45,6 +46,13 @@ $dokka.location:com.mygdx.mappuzzle/Colors/createColors/#/PointingToDeclaration/
 $dokka.location:com.mygdx.mappuzzle/Colors/dispose/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/dispose.html
 $dokka.location:com.mygdx.mappuzzle/Colors/holeColor/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/hole-color.html
 $dokka.location:com.mygdx.mappuzzle/Colors/outlineColor/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-colors/outline-color.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle///PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/index.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/DailyPuzzle/#com.mygdx.mappuzzle.Settings/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/-daily-puzzle.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/format/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/format.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/pickDailyLevel/#kotlin.Int/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/pick-daily-level.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/settings/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/settings.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/stored/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/stored.html
+$dokka.location:com.mygdx.mappuzzle/DailyPuzzle/today/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-daily-puzzle/today.html
 $dokka.location:com.mygdx.mappuzzle/Level///PointingToDeclaration/core/com.mygdx.mappuzzle/-level/index.html
 $dokka.location:com.mygdx.mappuzzle/Level/Level/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/-level.html
 $dokka.location:com.mygdx.mappuzzle/Level/addInfo/#kotlin.String/PointingToDeclaration/core/com.mygdx.mappuzzle/-level/add-info.html
@@ -96,8 +104,10 @@ $dokka.location:com.mygdx.mappuzzle/MapPuzzle/batch/#/PointingToDeclaration/cor
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/colors/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/colors.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/create/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/create.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/createLevels/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/create-levels.html
+$dokka.location:com.mygdx.mappuzzle/MapPuzzle/dailyPuzzle/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/daily-puzzle.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/dispose/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/dispose.html
 $dokka.location:com.mygdx.mappuzzle/MapPuzzle/levels/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/levels.html
+$dokka.location:com.mygdx.mappuzzle/MapPuzzle/settings/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-map-puzzle/settings.html
 $dokka.location:com.mygdx.mappuzzle/Piece///PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/index.html
 $dokka.location:com.mygdx.mappuzzle/Piece/Piece/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/-piece.html
 $dokka.location:com.mygdx.mappuzzle/Piece/Piece/#com.badlogic.gdx.graphics.Texture#kotlin.collections.List[com.mapbox.geojson.Point]#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/-piece.html
@@ -122,6 +132,16 @@ $dokka.location:com.mygdx.mappuzzle/Piece/recalculateValues/#/PointingToDeclarat
 $dokka.location:com.mygdx.mappuzzle/Piece/setX/#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/set-x.html
 $dokka.location:com.mygdx.mappuzzle/Piece/setY/#kotlin.Float/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/set-y.html
 $dokka.location:com.mygdx.mappuzzle/Piece/width/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-piece/width.html
+$dokka.location:com.mygdx.mappuzzle/Settings///PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/index.html
+$dokka.location:com.mygdx.mappuzzle/Settings/Settings/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/-settings.html
+$dokka.location:com.mygdx.mappuzzle/Settings/allowNotifications/#kotlin.Boolean/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/allow-notifications.html
+$dokka.location:com.mygdx.mappuzzle/Settings/currentLevel/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/current-level.html
+$dokka.location:com.mygdx.mappuzzle/Settings/getLevel/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/get-level.html
+$dokka.location:com.mygdx.mappuzzle/Settings/isRandom/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/is-random.html
+$dokka.location:com.mygdx.mappuzzle/Settings/notificationsAllowed/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/notifications-allowed.html
+$dokka.location:com.mygdx.mappuzzle/Settings/playRandom/#kotlin.Boolean/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/play-random.html
+$dokka.location:com.mygdx.mappuzzle/Settings/setLevel/#kotlin.Int/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/set-level.html
+$dokka.location:com.mygdx.mappuzzle/Settings/settings/#/PointingToDeclaration/core/com.mygdx.mappuzzle/-settings/settings.html
 com.mygdx.mappuzzle
 com.mygdx.mappuzzle.views
 
