@@ -47,10 +47,6 @@ open class MapPuzzle : Game() {
         //levels!!.add("brazil") No outline
     }
 
-    override fun render() {
-        super.render()
-    }
-
     /**
      * runs on application close, various libgdx objects need to be disposed of to
      * be freed from memory properly, dispose of any global variable with a dispose function here or

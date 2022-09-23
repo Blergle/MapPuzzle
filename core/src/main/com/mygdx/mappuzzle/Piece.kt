@@ -1,12 +1,7 @@
 package com.mygdx.mappuzzle
 
-import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.*
-import com.badlogic.gdx.graphics.g3d.particles.ParticleSorter
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.EarClippingTriangulator
 import com.mapbox.geojson.Point
 
@@ -19,19 +14,18 @@ open class Piece() {
     var height = 200f
     var width = 200f
 
-    var minX = 0f;
-    var maxX = 0f;
-    var minY = 0f;
-    var maxY = 0f;
+    var minX = 0f
+    var maxX = 0f
+    var minY = 0f
+    var maxY = 0f
     /** the difference between the x and y units, this is necessary because the length
      *  of latitude units to longitude units vary depending on where you are on the planet*/
-    var heightOffset = 0f;
+    var heightOffset = 0f
 
-    var offsetX = 0f;
-    var offsetY = 0f;
+    var offsetX = 0f
+    var offsetY = 0f
 
-
-    var polygon : PolygonSprite? = null;
+    var polygon : PolygonSprite? = null
     val polygons = ArrayList<Piece>()
     val holes = ArrayList<Piece>()
 
@@ -42,7 +36,7 @@ open class Piece() {
      * @param heightOffset the height difference between the width and height units.
      */
     constructor(color : Texture, points : List<Point>, heightOffset : Float) : this() {
-        createPolygon(color, points, heightOffset);
+        createPolygon(color, points, heightOffset)
     }
     /**
      * draws the polygon and all its child polygons
@@ -82,7 +76,7 @@ open class Piece() {
      * @param points the coordinates that make up the hole
      */
     fun createHole(color : Texture, points: List<Point>){
-        holes.add(Piece(color, points, heightOffset));
+        holes.add(Piece(color, points, heightOffset))
     }
 
     /**
@@ -92,7 +86,7 @@ open class Piece() {
      * @param points the coordinates that make up the new polygon
      */
     fun addPolygon(color : Texture, points : List<Point>){
-        polygons.add(Piece(color, points, heightOffset));
+        polygons.add(Piece(color, points, heightOffset))
     }
 
     /**
@@ -129,18 +123,18 @@ open class Piece() {
     fun createPolygon(color : Texture, points : List<Point>, heightOffset : Float){
         //this section converts the geojson points into a format which can be turned into a polygon sprite
         val floats = FloatArray(points.size*2)
-        var j = 0;
-        offsetX = points[0].longitude().toFloat();
-        offsetY = points[0].latitude().toFloat();
-        minX = points[0].longitude().toFloat();
-        maxX = points[0].longitude().toFloat();
+        var j = 0
+        offsetX = points[0].longitude().toFloat()
+        offsetY = points[0].latitude().toFloat()
+        minX = points[0].longitude().toFloat()
+        maxX = points[0].longitude().toFloat()
 
-        minY = points[0].latitude().toFloat();
-        maxY = points[0].latitude().toFloat();
+        minY = points[0].latitude().toFloat()
+        maxY = points[0].latitude().toFloat()
 
         for(i in points.indices){
-            var x = points[i].longitude().toFloat() - offsetX
-            var y = points[i].latitude().toFloat() - offsetY
+            val x = points[i].longitude().toFloat() - offsetX
+            val y = points[i].latitude().toFloat() - offsetY
             floats[j++] = x
             floats[j++] = y
             if(points[i].longitude().toFloat() < minX){
@@ -157,9 +151,9 @@ open class Piece() {
             }
         }
 
-        this.heightOffset = heightOffset;
-        width = maxX - minX;
-        height = (maxY - minY)*heightOffset;
+        this.heightOffset = heightOffset
+        width = maxX - minX
+        height = (maxY - minY)*heightOffset
 
         val triangulator = EarClippingTriangulator()
         val pr = PolygonRegion(TextureRegion(color), floats, triangulator.computeTriangles(floats).toArray().clone())
@@ -167,7 +161,7 @@ open class Piece() {
 
 
         polygon!!.setOrigin(0f, 0f)
-        polygon!!.setScale(1f, heightOffset);
+        polygon!!.setScale(1f, heightOffset)
     }
 
     /**
@@ -182,12 +176,11 @@ open class Piece() {
      */
     fun checkPos(outlineMinX :Float, outlineMinY : Float, viewportHeight : Float, outlineHeight : Float, outlineWidth : Float) : Boolean{
         if(polygon!!.x + outlineMinX<= offsetX + 0.05f*outlineWidth && polygon!!.x + outlineMinX >= offsetX - 0.05f*outlineWidth){
-
             if((polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight)<= offsetY*heightOffset + 0.05f*outlineHeight &&(polygon!!.y + outlineMinY*heightOffset) - (viewportHeight - outlineHeight) >= offsetY*heightOffset - 0.05f*outlineHeight){
-                return true;
+                return true
             }
         }
-            return false;
+            return false
     }
 
     @JvmName("setX1")
