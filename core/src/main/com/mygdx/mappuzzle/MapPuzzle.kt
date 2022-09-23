@@ -41,10 +41,10 @@ open class MapPuzzle : Game() {
         levels!!.add("hungary");
         levels!!.add("france");
         levels!!.add("germany")
-        levels!!.add("lithuania") //missing piece
+        //levels!!.add("lithuania") missing piece
         levels!!.add("slovakia")
         levels!!.add("nepal")
-        levels!!.add("brazil") //No outline
+        //levels!!.add("brazil") No outline
     }
 
     override fun render() {
