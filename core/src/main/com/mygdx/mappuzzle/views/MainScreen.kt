@@ -36,7 +36,7 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
      */
     override fun show() {
         //makes it so mouse clicks are registered properly
-        val gd : GestureDetector = GestureDetector(this)
+        val gd = GestureDetector(this)
         Gdx.input.inputProcessor = gd
 
         //creates and sets the level to random level in the list
@@ -65,7 +65,7 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 //                game.screen = MenuScreen(game)
 //            }
 //        })
-        var countryInfo = level.info
+        val countryInfo = level.info
         val dialog = Dialog("done", skin)
         dialog.text(countryInfo)
         stage.addActor(dialog)
