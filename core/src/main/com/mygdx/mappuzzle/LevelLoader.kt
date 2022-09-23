@@ -24,6 +24,7 @@ open class LevelLoader(var game : MapPuzzle) {
      * @return the created level
      */
     fun createLevel(level : String) : Level{
+        var info = Gdx.files.internal("levels/$level/$level").readString()
         var featureCollection = FeatureCollection.fromJson(Gdx.files.internal("levels/$level/$level-1.json").readString());
         val numerator :Float= (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("numerator").asFloat()
         val denominator :Float = (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("denominator").asFloat()
@@ -69,6 +70,7 @@ open class LevelLoader(var game : MapPuzzle) {
             }
             l.addPiece(piece)
             l.sort()
+            l.addInfo(info)
         }
 
 

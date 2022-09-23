@@ -70,8 +70,9 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 //                game.screen = MenuScreen(game)
 //            }
 //        })
+        var countryInfo = level.info
         val dialog = Dialog("done", skin)
-        dialog.text("Congratulations you finished todays puzzle!")
+        dialog.text(countryInfo)
         stage.addActor(dialog)
         //dialog.show(stage)
         dialog.setPosition(300f, 300f)

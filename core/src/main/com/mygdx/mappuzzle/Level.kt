@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 open class Level {
     var outline : Piece? = null;
     var pieces: MutableList<Piece> = ArrayList()
+    var info: String = ""
 
     /**
      * draws all the pieces contained in this level and
@@ -56,5 +57,9 @@ open class Level {
      */
     fun addPiece(p : Piece){
         pieces.add(p)
+    }
+
+    fun addInfo(s : String) {
+        info = s
     }
 }
