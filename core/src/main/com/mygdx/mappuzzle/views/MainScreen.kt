@@ -4,20 +4,15 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.OrthographicCamera
-import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.input.GestureDetector
 import com.badlogic.gdx.input.GestureDetector.GestureAdapter
 import com.badlogic.gdx.math.Vector3
-import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.ScreenUtils
 import com.badlogic.gdx.utils.viewport.ScreenViewport
-import com.mygdx.mappuzzle.views.MenuScreen
 import kotlin.random.Random
 
 /**
@@ -32,7 +27,7 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     var color : Color = Color.LIGHT_GRAY
 
     var level : Level = Level()
-    var camera : OrthographicCamera = OrthographicCamera();
+    var camera : OrthographicCamera = OrthographicCamera()
 
     val stage = Stage(ScreenViewport())
 
@@ -47,8 +42,8 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
         //creates and sets the level to random level in the list
         //game.levels!![Random.nextInt(game.levels!!.size)]
         level = l.createLevel(game.levels!![Random.nextInt(game.levels!!.size)])
-        camera.viewportWidth=(level.outline!!.width);
-        camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat());
+        camera.viewportWidth=(level.outline!!.width)
+        camera.viewportHeight= (level.outline!!.width)*(Gdx.graphics.height.toFloat()/Gdx.graphics.width.toFloat())
         camera.position.set(camera.viewportWidth/2,camera.viewportHeight/2,0f)
         level.outline!!.polygon!!.setPosition(level.outline!!.offsetX - level.outline!!.minX, camera.viewportHeight-(level.outline!!.height))
 
@@ -85,20 +80,20 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
     //val img = Texture(Gdx.files.internal("complete.png"));
 
     /**
-     * Main render loop of the screen, is called repeatedly every few miliseconds.
-     * @param delta the time between render calls in miliseconds
+     * Main render loop of the screen, is called repeatedly every few milliseconds.
+     * @param delta the time between render calls in milliseconds
      */
     override fun render(delta: Float) {
-        var completed = true;
-        camera.update();
-        game.batch!!.projectionMatrix = camera.combined;
+        var completed = true
+        camera.update()
+        game.batch!!.projectionMatrix = camera.combined
         ScreenUtils.clear(color)
         game.batch!!.begin()
         level.draw(game.batch!!)
 
         for(p in level.pieces){
             if(!p.checkPos(level.outline!!.minX,level.outline!!.minY, camera.viewportHeight, level.outline!!.height, level.outline!!.width)){
-                completed = false;
+                completed = false
             }
         }
         if(completed&&!dragging){
@@ -133,15 +128,15 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
 
 
     override fun panStop(x: Float, y: Float, pointer: Int, button: Int): Boolean {
-        currentPiece = null;
-        dragging = false;
+        currentPiece = null
+        dragging = false
         return true
     }
-    var dragging = false;
-    var currentPiece : Piece? = null;
+    var dragging = false
+    var currentPiece : Piece? = null
 
     override fun pan(x : Float,y :Float,deltaX : Float,deltaY : Float): Boolean {
-        val worldCoordinates = camera.unproject(Vector3(x.toFloat(), y.toFloat(), 0f))
+        val worldCoordinates = camera.unproject(Vector3(x, y, 0f))
         if(!dragging) {
 
             currentPiece = level.get(worldCoordinates.x, worldCoordinates.y)
