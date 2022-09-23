@@ -3,15 +3,15 @@ package com.mygdx.mappuzzle.views
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.GL20
+import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
-import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.ScreenViewport
-import com.badlogic.gdx.utils.viewport.StretchViewport
 import com.mygdx.mappuzzle.MainScreen
 import com.mygdx.mappuzzle.MapPuzzle
 
@@ -19,6 +19,9 @@ import com.mygdx.mappuzzle.MapPuzzle
 class MenuScreen(var game: MapPuzzle) : Screen {
 
     var stage: Stage = Stage(ScreenViewport())
+    var batch: SpriteBatch = SpriteBatch()
+
+    val bg = Texture(Gdx.files.internal("skin/background.png"))
 
     override fun show() {
         // Create a table that fills the screen. Everything else will go inside this table.
@@ -38,14 +41,14 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        //table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row()
-        //table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
+        table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
 
         // Listen to when the exit button is pressed, when pressed exit the app.
         exit.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
-                dispose();
+                dispose()
                 Gdx.app.exit()
             }
         })
@@ -63,17 +66,23 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // change screen method and change to the preferences screen.
         settings.addListener(object : ChangeListener() {
             override fun changed(event: ChangeEvent, actor: Actor) {
-                dispose();
+                dispose()
                 game.screen = SettingsScreen(game)
             }
         })
     }
+
 
     // The render method clears the screen before drawing the stage.
     override fun render(delta: Float) {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         stage.act(Math.min(Gdx.graphics.deltaTime, 1 / 30f))
+
+        batch.begin()
+        batch.draw(bg,0f,0f,Gdx.graphics.width.toFloat(),Gdx.graphics.height.toFloat())
+        batch.end()
+
         stage.draw()
     }
 

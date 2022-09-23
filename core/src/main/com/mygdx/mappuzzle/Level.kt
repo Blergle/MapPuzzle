@@ -1,15 +1,15 @@
 package com.mygdx.mappuzzle
 
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch
-import com.badlogic.gdx.graphics.g2d.SpriteBatch
 
 /**
  * this object will represent a Level so put anything level specific in here
  * currently just contains an array of pieces for drawing.
  */
 open class Level {
-    var outline : Piece? = null;
+    var outline : Piece? = null
     var pieces: MutableList<Piece> = ArrayList()
+    var info: String = ""
 
     /**
      * draws all the pieces contained in this level and
@@ -17,12 +17,12 @@ open class Level {
      * @param batch the batch used to draw the pieces.
      */
     fun draw(batch : PolygonSpriteBatch) {
-        outline!!.draw(batch);
+        outline!!.draw(batch)
         for(Piece in pieces){
             Piece.draw(batch)
         }
     }
-/** returns the piece at these x and y coordinates, returns null if piece isnt found
+/** returns the piece at these x and y coordinates, returns null if piece isn't found
  *
  * @param x the x coordinate of the target piece
  * @param y the y coordinate of the target piece
@@ -44,9 +44,9 @@ open class Level {
      */
     fun sort(){
         val sorted = (pieces.sortedWith(compareBy { -it.holes.size }))
-        pieces.clear();
+        pieces.clear()
         for(p in sorted){
-            pieces.add(p);
+            pieces.add(p)
         }
     }
 
@@ -56,5 +56,14 @@ open class Level {
      */
     fun addPiece(p : Piece){
         pieces.add(p)
+    }
+
+    /**
+     * adds information about the country to a string stored
+     * in the level.
+     * @ param s is the string containing the country's information.
+     */
+    fun addInfo(s : String) {
+        info = s
     }
 }

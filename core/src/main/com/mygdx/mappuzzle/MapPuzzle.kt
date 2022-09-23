@@ -12,22 +12,22 @@ open class MapPuzzle : Game() {
     //used to draw polygons
     var batch: PolygonSpriteBatch? = null
     //manages external assets that need to be loaded
-    var assetManager: AssetManager? = null;
+    var assetManager: AssetManager? = null
     //colors used for pieces
-    var colors : Colors? = null;
+    var colors : Colors? = null
 
-    var levels : ArrayList<String>? = null;
+    var levels : ArrayList<String>? = null
 
     /**
      * runs on application startup,
      * put any initializers for global variables in here
      */
     override fun create() {
-        assetManager = AssetManager();
+        assetManager = AssetManager()
         batch = PolygonSpriteBatch(32767)
-        colors = Colors();
+        colors = Colors()
         colors!!.createColors()
-        levels = ArrayList();
+        levels = ArrayList()
         createLevels()
         //this command switches the current screen being displayed
         this.setScreen(LoadingScreen(this))
@@ -38,17 +38,13 @@ open class MapPuzzle : Game() {
      * adding an id here will eventually enable the game to pick it and load it.
      */
     fun createLevels(){
-        levels!!.add("hungary");
-        levels!!.add("france");
+        levels!!.add("hungary")
+        levels!!.add("france")
         levels!!.add("germany")
-        levels!!.add("lithuania")
+        //levels!!.add("lithuania") missing piece
         levels!!.add("slovakia")
         levels!!.add("nepal")
-        levels!!.add("brazil")
-    }
-
-    override fun render() {
-        super.render()
+        //levels!!.add("brazil") No outline
     }
 
     /**
@@ -58,7 +54,7 @@ open class MapPuzzle : Game() {
      */
     override fun dispose() {
         batch!!.dispose()
-        colors!!.dispose();
-        assetManager!!.dispose();
+        colors!!.dispose()
+        assetManager!!.dispose()
     }
 }

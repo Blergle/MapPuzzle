@@ -1,11 +1,8 @@
 package com.mygdx.mappuzzle
 
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.net.HttpRequestBuilder.json
 import com.badlogic.gdx.utils.JsonReader
-import com.mapbox.geojson.Feature
 import com.mapbox.geojson.FeatureCollection
-import com.mapbox.geojson.Geometry
 import com.mapbox.geojson.MultiPolygon
 import kotlin.random.Random
 
@@ -24,26 +21,27 @@ open class LevelLoader(var game : MapPuzzle) {
      * @return the created level
      */
     fun createLevel(level : String) : Level{
-        var featureCollection = FeatureCollection.fromJson(Gdx.files.internal("levels/$level/$level-1.json").readString());
+        val info = Gdx.files.internal("levels/$level/$level").readString()
+        var featureCollection = FeatureCollection.fromJson(Gdx.files.internal("levels/$level/$level-1.json").readString())
         val numerator :Float= (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("numerator").asFloat()
         val denominator :Float = (JsonReader().parse(Gdx.files.internal("levels/$level/$level-scale.json").readString())).get("denominator").asFloat()
-        val heightOffset :Float = numerator/denominator;
+        val heightOffset :Float = numerator/denominator
         val l = Level()
         val features = featureCollection.features()
-        var colors  = Array(game.colors!!.colors.size) { i -> true};
-        var n = 0;
+        var colors  = Array(game.colors!!.colors.size) { i -> true}
+        var n = 0
         for(f in features!!) {
             val piece = Piece()
-            val coordinates = (f.geometry() as MultiPolygon)!!.coordinates()
+            val coordinates = (f.geometry() as MultiPolygon).coordinates()
             var color = 0
             if(n==game.colors!!.colors.size){
-                colors  = Array(game.colors!!.colors.size) { i -> true };
-                n=0;
+                colors  = Array(game.colors!!.colors.size) { i -> true }
+                n=0
             }else{
                 n++
-                var go = true;
+                var go = true
                 while(go){
-                    color = Random.nextInt(0, game.colors!!.colors.size);
+                    color = Random.nextInt(0, game.colors!!.colors.size)
                     if(colors[color]){
                         colors[color]=false
                         go=false
@@ -65,10 +63,11 @@ open class LevelLoader(var game : MapPuzzle) {
                         }
                     }
                 }
-                piece.recalculateValues();
+                piece.recalculateValues()
             }
             l.addPiece(piece)
             l.sort()
+            l.addInfo(info)
         }
 
 
@@ -80,9 +79,9 @@ open class LevelLoader(var game : MapPuzzle) {
             for(i in 1 until coordinates.size-1){
                 piece.addPolygon(game.colors!!.outlineColor!!, coordinates[i][0])
             }
-            piece.recalculateValues();
+            piece.recalculateValues()
         }
-        l.outline = piece;
+        l.outline = piece
         return l
     }
 
