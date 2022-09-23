@@ -38,13 +38,13 @@ open class MapPuzzle : Game() {
      * adding an id here will eventually enable the game to pick it and load it.
      */
     fun createLevels(){
-        //levels!!.add("hungary");
+        levels!!.add("hungary");
         levels!!.add("france");
-//        levels!!.add("germany")
-//        levels!!.add("lithuania")
-//        levels!!.add("slovakia")
-//        levels!!.add("nepal")
-        //levels!!.add("brazil") DOESN'T WORK
+        levels!!.add("germany")
+        levels!!.add("lithuania") //missing piece
+        levels!!.add("slovakia")
+        levels!!.add("nepal")
+        levels!!.add("brazil") //No outline
     }
 
     override fun render() {
