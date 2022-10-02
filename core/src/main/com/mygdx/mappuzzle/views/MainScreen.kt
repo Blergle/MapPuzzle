@@ -57,7 +57,6 @@ class MainScreen(var game : MapPuzzle) : Screen, GestureAdapter() {
         stage.addActor(table)
 
         val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
-
         val countryInfo = level.info
         val dialog = Dialog("done", skin)
         dialog.text(countryInfo)

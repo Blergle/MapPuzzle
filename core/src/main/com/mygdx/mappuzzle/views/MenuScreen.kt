@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
@@ -14,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener
 import com.badlogic.gdx.utils.viewport.ScreenViewport
 import com.mygdx.mappuzzle.MainScreen
 import com.mygdx.mappuzzle.MapPuzzle
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle as TextButtonStyle
 
 // This class contains all the UI components and functionality of the main menu.
 class MenuScreen(var game: MapPuzzle) : Screen {
@@ -33,25 +35,11 @@ class MenuScreen(var game: MapPuzzle) : Screen {
         // Import the UI assets from files.
         val skin = Skin(Gdx.files.internal("skin/flat-earth-ui.json"))
 
-        // Create buttons for the menu.
         val play = TextButton("Play", skin)
-        val settings = TextButton("Settings", skin)
-        val exit = TextButton("Exit", skin)
 
         // Add the menu buttons to the table and change their sizes.
         table.add(play).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
         table.row().pad(10f, 0f, 10f, 0f)
-        table.add(settings).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
-        table.row()
-        table.add(exit).fillX().uniformX().width((Gdx.graphics.width/2).toFloat()).height((Gdx.graphics.height/15).toFloat())
-
-        // Listen to when the exit button is pressed, when pressed exit the app.
-        exit.addListener(object : ChangeListener() {
-            override fun changed(event: ChangeEvent, actor: Actor) {
-                dispose()
-                Gdx.app.exit()
-            }
-        })
 
         // Listen for when the play button is pressed, when pressed call the change screen
         // method and change the screen to the main screen.
@@ -62,14 +50,6 @@ class MenuScreen(var game: MapPuzzle) : Screen {
             }
         })
 
-        // Listen for when the preferences button is pressed, when it is pressed call the
-        // change screen method and change to the preferences screen.
-        settings.addListener(object : ChangeListener() {
-            override fun changed(event: ChangeEvent, actor: Actor) {
-                dispose()
-                game.screen = SettingsScreen(game)
-            }
-        })
     }
 
 
